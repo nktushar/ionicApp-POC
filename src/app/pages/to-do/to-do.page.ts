@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'to-do',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [IonicModule, FormsModule, CommonModule],
   templateUrl: './to-do.page.html',
   styleUrl: './to-do.page.scss'
 })
 
-export class ToDoPage  {
+export class ToDoPage implements OnInit  {
   taskObj: Task;
   taskList: Task[] = [];
   originalTaskList: Task[] = [];
@@ -18,20 +20,26 @@ export class ToDoPage  {
   filterType: string = '';
   selectedTag: string = '';
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.taskObj = new Task();
-    const localData = localStorage.getItem('todoApp');
-    if (localData != null) {
-      this.taskList = JSON.parse(localData);
+  }
+
+  ngOnInit() {
+    const storedData = this.dataService.getData('todoApp');
+    console.log("storedData:", storedData);
+    if (storedData != null) {
+      this.taskList = storedData;
       this.originalTaskList = this.taskList;
     }
   }
+
+  
   createNewTask(): void {
     const task = JSON.stringify(this.taskObj);
     const parseTask = JSON.parse(task);
     this.originalTaskList.push(parseTask);
     this.taskList = this.originalTaskList;
-    localStorage.setItem('todoApp', JSON.stringify(this.taskList))
+    this.dataService.setData('todoApp', this.taskList)
     this.taskObj = new Task();
     this.filterType = '';
   }
@@ -48,8 +56,11 @@ export class ToDoPage  {
   } 
 
   getArrayFromCommaSeparatedString(str: string): string[] {
-    const arr = str.split(',');
-    return arr;
+    if(str !== undefined && str !== null && str !== ''){
+      const arr = str.split(',');
+      return arr;
+    }
+    return [];
   }
 
   setFilter(filterType: string): void {
@@ -80,16 +91,10 @@ export class ToDoPage  {
 
 }
 export class Task {
-  taskName: string;
-  dueDate: string;
-  tags: string;
-  isCompleted: boolean;
-  constructor() {
-    this.taskName = "";
-    this.dueDate = "";
-    this.tags = "";
-    this.isCompleted = false;
-  }
+  taskName!: string;
+  dueDate!: string;
+  tags!: string;
+  isCompleted!: boolean;
 }
 
 
