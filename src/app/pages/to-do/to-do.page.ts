@@ -37,6 +37,19 @@ export class ToDoPage implements OnInit  {
   createNewTask(): void {
     const task = JSON.stringify(this.taskObj);
     const parseTask = JSON.parse(task);
+
+    if(parseTask.taskName === undefined || parseTask.taskName === null || parseTask.taskName === '') {
+      alert('Please enter task name');
+      return;
+    }
+    if(parseTask.dueDate === undefined || parseTask.dueDate === null || parseTask.dueDate === '') {
+      alert('Please enter due date');
+      return;
+    }
+    if(parseTask.tags === undefined || parseTask.tags === null || parseTask.tags === '') {
+      alert('Please enter tags');
+      return;
+    }
     this.originalTaskList.push(parseTask);
     this.taskList = this.originalTaskList;
     this.dataService.setData('todoApp', this.taskList)
