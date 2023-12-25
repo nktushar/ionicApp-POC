@@ -11,7 +11,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'date-time',
+    path: 'calendar',
     loadComponent: () =>
       import('./pages/date-time/date-time.page').then((m) => m.DateTimePage),
   },
