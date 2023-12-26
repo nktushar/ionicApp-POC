@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 // import dayGridPlugin from '@fullcalendar/daygrid';
 import * as moment from 'moment';
+import { last } from 'rxjs';
 
 interface Day {
   dayOfMonth: number;
@@ -27,6 +28,10 @@ export class DateTimePage implements OnInit {
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   dates: number[] = [];
 
+  hasNotes(date: number): boolean {
+    return date  === 7;
+  }
+
   ngOnInit(): void {
     this.generateCalendar();
   }
@@ -37,10 +42,35 @@ export class DateTimePage implements OnInit {
 
     this.dates = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-    // Add padding for days of previous month
+
+
+    // Add padding for days of previous month with previous month's days
+    // if (firstDayOfMonth > 0) {
+    //   const previousMonthDays = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 0).getDate();
+    //   for (let i = 0; i < firstDayOfMonth; i++) {
+    //     this.dates.unshift(previousMonthDays - i);
+    //   }
+    // }
     for (let i = 0; i < firstDayOfMonth; i++) {
       this.dates.unshift(0);
     }
+
+    // Add padding for days of next month with next month's starting days
+    // const totalDays = this.dates.length;
+    // const nextMonthDays = 7 - (totalDays % 7);
+    // if (nextMonthDays < 7) {
+    //   for (let i = 0; i < nextMonthDays; i++) {
+    //     this.dates.push(i + 1);
+    //   }
+    // }
+    const totalDays = this.dates.length;
+    const nextMonthDays = 7 - (totalDays % 7);
+    if (nextMonthDays < 7) {
+      for (let i = 0; i < nextMonthDays; i++) {
+        this.dates.push(0);
+      }
+    } 
+
   }
 
   isDifferentMonth(date: number): boolean {

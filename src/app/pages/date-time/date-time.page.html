@@ -22,10 +22,10 @@
       <div class="relative overflow-hidden w-96 bg-white shadow-md rounded-md">
         <div class="rounded-md p-3 relative">
           <div
-            class="absolute top-0 right-0 w-12 h-12 rounded-full bg-slate-100 flex transform translate-x-1 -translate-y-1"
+            class="absolute top-0 right-0 w-14 h-14 rounded-full bg-slate-100 flex transform translate-x-1 -translate-y-1"
           >
             <div
-              class="mx-auto my-auto w-10 h-10 rounded-full bg-cyan-700 shadow-md flex"
+              class="mx-auto my-auto w-12 h-12 rounded-full bg-cyan-700 shadow-gray-400 shadow-md flex"
             >
               <i
                 class="mx-auto my-auto text-white font-light fa fa-arrows-alt"
@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <div class="flex mb-3">
+          <div class="flex mt-2 mb-4">
             <h3 class="text-lg font-semibold mr-6">{{ currentMonth }}</h3>
             <div class="w-7 h-7 bg-teal-400 rounded-full mr-10 flex">
               <i
@@ -82,14 +82,27 @@
               </ng-container>
               <ng-container *ngFor="let date of dates">
                 <div
-                  class="flex justify-center items-center p-2 font-semibold"
+                  class="flex justify-center items-center p-2 font-semibold relative"
                   [class.text-gray-200]="isDifferentMonth(date)"
                   [class.bg-cyan-700]="isToday(date)"
                   [class.rounded-full]="isToday(date)"
                   [class.text-white]="isToday(date)"
                   [class.text-gray-600]="!isToday(date)"
                 >
-                  {{ date }}
+                <span>{{ date }}</span>
+                <!-- <span class="w-2 h-2 rounded-full bg-red-500"></span> -->
+                <!-- <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2"> -->
+                  <span 
+                    *ngIf="hasNotes(date)"
+                    class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-2 "
+                  >
+                  <div class="flex gap-0.5">
+                    <div class="w-2 h-2  rounded-full bg-red-500"> </div>
+                    <div class="w-2 h-2  rounded-full bg-green-600"> </div>
+                  </div>
+                
+                </span>
+                <!-- </span> -->
                 </div>
               </ng-container>
             </div>
