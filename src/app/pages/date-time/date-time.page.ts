@@ -62,6 +62,26 @@ export class DateTimePage implements OnInit {
     this.generateCalendar();
   }
 
+  isToday(date: number): boolean {
+  const today = new Date();
+  return (
+    date === today.getDate() &&
+    this.currentDate.getMonth() === today.getMonth() &&
+    this.currentDate.getFullYear() === today.getFullYear()
+  );
+}
+
+isTodayDayName(day: string): boolean {
+  const today = new Date();
+  return (
+    day === this.days[today.getDay()] &&
+    this.currentDate.getMonth() === today.getMonth() &&
+    this.currentDate.getFullYear() === today.getFullYear()
+  );
+  
+}
+
+
 }
 
 
