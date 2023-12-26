@@ -18,18 +18,19 @@ interface Day {
   templateUrl: './date-time.page.html',
   styleUrls: ['./date-time.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule]
+  imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule],
 })
-
 export class DateTimePage implements OnInit {
-
   currentDate: Date = new Date();
-  currentMonth: string = this.currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+  currentMonth: string = this.currentDate.toLocaleString('default', {
+    month: 'long',
+    year: 'numeric',
+  });
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   dates: number[] = [];
 
   hasNotes(date: number): boolean {
-    return date  === 7;
+    return date === 7;
   }
 
   ngOnInit(): void {
@@ -37,14 +38,19 @@ export class DateTimePage implements OnInit {
   }
 
   generateCalendar(): void {
-    const daysInMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0).getDate();
-    const firstDayOfMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1).getDay();
+    const daysInMonth = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth() + 1,
+      0
+    ).getDate();
+    const firstDayOfMonth = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth(),
+      1
+    ).getDay();
 
     this.dates = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-
-
-    // Add padding for days of previous month with previous month's days
     // if (firstDayOfMonth > 0) {
     //   const previousMonthDays = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 0).getDate();
     //   for (let i = 0; i < firstDayOfMonth; i++) {
@@ -55,7 +61,6 @@ export class DateTimePage implements OnInit {
       this.dates.unshift(0);
     }
 
-    // Add padding for days of next month with next month's starting days
     // const totalDays = this.dates.length;
     // const nextMonthDays = 7 - (totalDays % 7);
     // if (nextMonthDays < 7) {
@@ -69,8 +74,7 @@ export class DateTimePage implements OnInit {
       for (let i = 0; i < nextMonthDays; i++) {
         this.dates.push(0);
       }
-    } 
-
+    }
   }
 
   isDifferentMonth(date: number): boolean {
@@ -88,30 +92,28 @@ export class DateTimePage implements OnInit {
   }
 
   updateMonth(): void {
-    this.currentMonth = this.currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+    this.currentMonth = this.currentDate.toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
     this.generateCalendar();
   }
 
   isToday(date: number): boolean {
-  const today = new Date();
-  return (
-    date === today.getDate() &&
-    this.currentDate.getMonth() === today.getMonth() &&
-    this.currentDate.getFullYear() === today.getFullYear()
-  );
+    const today = new Date();
+    return (
+      date === today.getDate() &&
+      this.currentDate.getMonth() === today.getMonth() &&
+      this.currentDate.getFullYear() === today.getFullYear()
+    );
+  }
+
+  isTodayDayName(day: string): boolean {
+    const today = new Date();
+    return (
+      day === this.days[today.getDay()] &&
+      this.currentDate.getMonth() === today.getMonth() &&
+      this.currentDate.getFullYear() === today.getFullYear()
+    );
+  }
 }
-
-isTodayDayName(day: string): boolean {
-  const today = new Date();
-  return (
-    day === this.days[today.getDay()] &&
-    this.currentDate.getMonth() === today.getMonth() &&
-    this.currentDate.getFullYear() === today.getFullYear()
-  );
-  
-}
-
-
-}
-
-

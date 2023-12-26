@@ -90,8 +90,6 @@
                   [class.text-gray-600]="!isToday(date)"
                 >
                 <span>{{ date }}</span>
-                <!-- <span class="w-2 h-2 rounded-full bg-red-500"></span> -->
-                <!-- <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2"> -->
                   <span 
                     *ngIf="hasNotes(date)"
                     class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-2 "
@@ -100,9 +98,7 @@
                     <div class="w-2 h-2  rounded-full bg-red-500"> </div>
                     <div class="w-2 h-2  rounded-full bg-green-600"> </div>
                   </div>
-                
                 </span>
-                <!-- </span> -->
                 </div>
               </ng-container>
             </div>
