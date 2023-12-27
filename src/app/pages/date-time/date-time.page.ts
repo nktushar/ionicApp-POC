@@ -28,9 +28,20 @@ export class DateTimePage implements OnInit {
   });
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   dates: number[] = [];
+  notes: { date: number, month: number, year: number }[] = [
+    { date: 10, month: 11, year: 2023 },
+    { date: 7, month: 12, year: 2023 },
+    { date: 15, month: 12, year: 2023 },
+    // Add more notes as needed
+  ];
 
   hasNotes(date: number): boolean {
-    return date === 7;
+    const currentMonth = this.currentDate.getMonth() + 1; // Months are zero-based, so adding 1
+  const currentYear = this.currentDate.getFullYear();
+
+  return this.notes.some(note => {
+    return note.date === date && note.month === currentMonth && note.year === currentYear;
+  });
   }
 
   ngOnInit(): void {
