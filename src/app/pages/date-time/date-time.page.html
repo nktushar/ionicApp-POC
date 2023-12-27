@@ -19,8 +19,8 @@
 <ion-content>
   <div class="bg-slate-100">
     <div class="h-screen flex items-center justify-center">
-      <div class="relative overflow-hidden w-96 bg-white shadow-md rounded-md">
-        <div class="rounded-md p-3 relative">
+      <div class="relative overflow-hidden w-96 p-3 bg-white shadow-md rounded-md">
+        <!-- Expand Button -->
           <div
             class="absolute top-0 right-0 w-14 h-14 rounded-full bg-slate-100 flex transform translate-x-1 -translate-y-1"
           >
@@ -33,31 +33,41 @@
             </div>
           </div>
 
-          <div class="flex mt-2 mb-4">
-            <h3 class="text-lg font-semibold mr-6">{{ currentMonth }}</h3>
-            <div class="w-7 h-7 bg-teal-400 rounded-full mr-10 flex">
-              <i
-                class="mx-auto my-auto text-sm text-white fa fa-calendar-plus-o"
-              ></i>
+          <!-- Calendar Top Section -->
+          <div class="flex justify-between mt-2 mb-4 mr-12">
+            <div class="flex gap-4">
+              <h3 class="text-lg font-semibold">{{ currentMonth }}</h3>
+              <div class="w-8 h-8 bg-teal-500 rounded-full flex">
+                <i
+                  class="mx-auto my-auto text-sm text-white fa fa-calendar-plus-o"
+                ></i>
+              </div>
             </div>
-            <div
-              (click)="previousMonth()"
-              class="w-6 h-6 bg-cyan-100 rounded-full mr-3 flex cursor-pointer"
-            >
-              <i
-                class="mx-auto my-auto text-sm text-cyan-700 font-light fa fa-chevron-left"
-              ></i>
-            </div>
-            <div
-              (click)="nextMonth()"
-              class="w-6 h-6 bg-cyan-100 rounded-full flex cursor-pointer"
-            >
-              <i
-                class="mx-auto my-auto text-sm text-cyan-700 font-light fa fa-chevron-right"
-              ></i>
+            <div class="flex gap-3">
+              <div
+                (click)="previousMonth()"
+                class="w-8 h-8 bg-cyan-50 hover:bg-cyan-100 rounded-full flex cursor-pointer"
+              >
+                <div class="mx-auto my-auto">
+                  <i
+                    class="text-sm text-cyan-700 font-light fa fa-chevron-left"
+                  ></i>
+                </div>
+              </div>
+              <div
+                (click)="nextMonth()"
+                class="w-8 h-8 bg-cyan-50 hover:bg-cyan-100 rounded-full flex cursor-pointer"
+              >
+                <div class="mx-auto my-auto">
+                  <i
+                    class="text-sm text-cyan-700 font-light fa fa-chevron-right"
+                  ></i>
+                </div>
+              </div>
             </div>
           </div>
 
+          <!-- Legends Layer -->
           <div class="text-xs font-semibold flex justify-between mb-3">
             <h5 class="text-gray-600">LEGENDS:</h5>
             <h5 class="bg-green-100 text-green-600">ASSESSMENT</h5>
@@ -68,7 +78,7 @@
 
           <hr class="mb-3 border-t-2 border-slate-400" />
 
-          <!-- The calendar -->
+          <!-- The Calendar -->
           <div>
             <div class="grid grid-cols-7 gap-2">
               <ng-container *ngFor="let day of days; let i = index">
@@ -83,30 +93,31 @@
               <ng-container *ngFor="let date of dates">
                 <div
                   class="flex justify-center items-center p-2 font-semibold relative"
-                  [class.text-gray-200]="isDifferentMonth(date)"
-                  [class.bg-cyan-700]="isToday(date)"
-                  [class.rounded-full]="isToday(date)"
-                  [class.text-white]="isToday(date)"
+                  [ngClass]="{
+                    'bg-cyan-700 rounded-full text-white': isToday(date)
+                  }"
                   [class.text-gray-600]="!isToday(date)"
+                  [class.text-gray-200]="isDifferentMonth(date)"
                 >
-                <span>{{ date }}</span>
-                  <span 
+                  <span>{{ date }}</span>
+                  <span
                     *ngIf="hasNotes(date)"
-                    class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-2 "
+                    class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-2"
                   >
-                  <div class="flex gap-0.5">
-                    <div class="w-2 h-2  rounded-full bg-red-500"> </div>
-                    <div class="w-2 h-2  rounded-full bg-green-600"> </div>
-                  </div>
-                </span>
+                    <div class="flex gap-0.5">
+                      <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                      <div class="w-2 h-2 rounded-full bg-green-600"></div>
+                    </div>
+                  </span>
                 </div>
               </ng-container>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
+
+    <!-- Content Box -->
     <div class="flex items-center justify-center pb-20">
       <div class="relative overflow-hidden shadow-md rounded-md">
         <div class="border-1 border-green-600 rounded-md p-8 relative">
