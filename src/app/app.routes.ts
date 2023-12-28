@@ -18,5 +18,9 @@ export const routes: Routes = [
   {
     path: 'to-do',
     loadComponent: () => import('./pages/to-do/to-do.page').then( m => m.ToDoPage)
+  },  {
+    path: 'progress-bar',
+    loadComponent: () => import('./pages/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
   },
+
 ];

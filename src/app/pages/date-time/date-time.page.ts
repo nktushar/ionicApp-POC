@@ -36,7 +36,7 @@ export class DateTimePage implements OnInit {
   ];
 
   hasNotes(date: number): boolean {
-    const currentMonth = this.currentDate.getMonth() + 1; // Months are zero-based, so adding 1
+    const currentMonth = this.currentDate.getMonth() + 1;
   const currentYear = this.currentDate.getFullYear();
 
   return this.notes.some(note => {
