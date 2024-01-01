@@ -1,22 +1,24 @@
-.bubble {
-    position: relative;
-    border-radius: 10px;
-  }
+// .bubble {
+//     position: relative;
+//     border-radius: 10px;
+//   }
 
-.bubble4 {
-    @extend .bubble;
+// .bubble4 {
+//     @extend .bubble;
   
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border: 13px solid transparent;
-      border-top-color: rgb(27, 117, 129);
-      border-bottom: 0;
-      margin-left: -13px;
-      margin-bottom: -13px;
-    }
-  }
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       bottom: 0;
+//       left: 50%;
+//       width: 0;
+//       height: 0;
+//       border: 13px solid transparent;
+//       border-top-color: rgb(27, 117, 129);
+//       border-bottom: 0;
+//       margin-left: -13px;
+//       margin-bottom: -13px;
+//     }
+//   }
+
+
