@@ -22,5 +22,9 @@ export const routes: Routes = [
     path: 'progress-bar',
     loadComponent: () => import('./pages/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
   },
+  {
+    path: 'full-calendar',
+    loadComponent: () => import('./pages/full-calendar/full-calendar.page').then( m => m.FullCalendarPage)
+  },
 
 ];
