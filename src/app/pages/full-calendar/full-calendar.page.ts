@@ -2,38 +2,129 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
-import dayGridPlugin from '@fullcalendar/daygrid';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// import { FullCalendarModule } from '@fullcalendar/angular';
+// import { CalendarOptions } from '@fullcalendar/core'; 
+// import dayGridPlugin from '@fullcalendar/daygrid';
+
+interface Day {
+  dayOfMonth: number;
+  isOtherMonth: boolean;
+}
 
 @Component({
   selector: 'app-full-calendar',
   templateUrl: './full-calendar.page.html',
   styleUrls: ['./full-calendar.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, FullCalendarModule]
+  imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule]
 })
 export class FullCalendarPage implements OnInit {
+  currentDate: Date = new Date();
+  currentMonth: string = this.currentDate.toLocaleString('default', {
+    month: 'long',
+    year: 'numeric',
+  });
+  days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  dates: number[] = [];
+  notes: { date: number, month: number, year: number }[] = [
+    { date: 5, month: 1, year: 2024 },
+    { date: 7, month: 12, year: 2023 },
+    { date: 15, month: 12, year: 2023 },
+    // Add more notes as needed
+  ];
 
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    plugins: [dayGridPlugin],
-    events: [
-      { title: 'event 1', date: '2024-01-02' },
-      { title: 'event 2', date: '2024-01-05' }
-    ]
-  };
+  hasNotes(date: number): boolean {
+    const currentMonth = this.currentDate.getMonth() + 1;
+  const currentYear = this.currentDate.getFullYear();
 
-  handleDateClick(arg : any) {
-    alert('date click! ' + arg.dateStr)
+  return this.notes.some(note => {
+    return note.date === date && note.month === currentMonth && note.year === currentYear;
+  });
   }
 
-  constructor() { 
-    
+  ngOnInit(): void {
+    this.generateCalendar();
   }
 
-  ngOnInit() {
-    dateClick: this.handleDateClick.bind(this);
+  generateCalendar(): void {
+    const daysInMonth = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth() + 1,
+      0
+    ).getDate();
+    const firstDayOfMonth = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth(),
+      1
+    ).getDay();
+
+    this.dates = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+    // if (firstDayOfMonth > 0) {
+    //   const previousMonthDays = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 0).getDate();
+    //   for (let i = 0; i < firstDayOfMonth; i++) {
+    //     this.dates.unshift(previousMonthDays - i);
+    //   }
+    // }
+    for (let i = 0; i < firstDayOfMonth; i++) {
+      this.dates.unshift(0);
+    }
+
+    // const totalDays = this.dates.length;
+    // const nextMonthDays = 7 - (totalDays % 7);
+    // if (nextMonthDays < 7) {
+    //   for (let i = 0; i < nextMonthDays; i++) {
+    //     this.dates.push(i + 1);
+    //   }
+    // }
+    const totalDays = this.dates.length;
+    const nextMonthDays = 7 - (totalDays % 7);
+    if (nextMonthDays < 7) {
+      for (let i = 0; i < nextMonthDays; i++) {
+        this.dates.push(0);
+      }
+    }
   }
 
+  isDifferentMonth(date: number): boolean {
+    return date === 0;
+  }
+
+  previousMonth(): void {
+    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+    this.updateMonth();
+  }
+
+  nextMonth(): void {
+    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+    this.updateMonth();
+  }
+
+  updateMonth(): void {
+    this.currentMonth = this.currentDate.toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
+    this.generateCalendar();
+  }
+
+  isToday(date: number): boolean {
+    const today = new Date();
+    return (
+      date === today.getDate() &&
+      this.currentDate.getMonth() === today.getMonth() &&
+      this.currentDate.getFullYear() === today.getFullYear()
+    );
+  }
+
+  isTodayDayName(day: string): boolean {
+    const today = new Date();
+    return (
+      day === this.days[today.getDay()] &&
+      this.currentDate.getMonth() === today.getMonth() &&
+      this.currentDate.getFullYear() === today.getFullYear()
+    );
+  }
 }

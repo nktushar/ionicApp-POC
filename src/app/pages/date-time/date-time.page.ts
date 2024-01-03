@@ -6,8 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import {FullCalendarModule} from '@fullcalendar/angular';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 // import dayGridPlugin from '@fullcalendar/daygrid';
-import * as moment from 'moment';
-import { last } from 'rxjs';
+// import * as moment from 'moment';
+// import { last } from 'rxjs';
 
 interface Day {
   dayOfMonth: number;
