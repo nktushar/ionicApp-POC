@@ -26,5 +26,9 @@ export const routes: Routes = [
     path: 'full-calendar',
     loadComponent: () => import('./pages/full-calendar/full-calendar.page').then( m => m.FullCalendarPage)
   },
+  {
+    path: 'toast-calendar',
+    loadComponent: () => import('./pages/toast-calendar/toast-calendar.page').then( m => m.ToastCalendarPage)
+  },
 
 ];

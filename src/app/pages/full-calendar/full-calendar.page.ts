@@ -4,10 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// import { FullCalendarModule } from '@fullcalendar/angular';
-// import { CalendarOptions } from '@fullcalendar/core'; 
-// import dayGridPlugin from '@fullcalendar/daygrid';
-
 interface Day {
   dayOfMonth: number;
   isOtherMonth: boolean;
