@@ -30,7 +30,7 @@
             class="mx-auto my-auto w-10 h-10 rounded-full bg-cyan-700 shadow-gray-400 shadow-md flex"
             href="/full-calendar"
           >
-          <ion-icon class="text-white mx-auto my-auto text-2xl" name="expand-outline"></ion-icon>
+          <ion-icon class="text-white mx-auto my-auto text-xl" name="expand-outline"></ion-icon>
           </a>
         </div>
 
@@ -98,7 +98,7 @@
                     'bg-cyan-700 rounded-full text-white': isToday(date)
                   }"
                 [class.text-gray-600]="!isToday(date)"
-                [class.text-gray-200]="isDifferentMonth(date)"
+                [class.text-slate-100]="isDifferentMonth(date)"
               >
                 <span>{{ date }}</span>
                 <span
