@@ -30,6 +30,8 @@ export class FullCalendarPage implements OnInit {
     { date: 15, month: 12, year: 2023 },
     // Add more notes as needed
   ];
+  weeks: any[] = [];
+  numCols = 7;
 
   hasNotes(date: number): boolean {
     const currentMonth = this.currentDate.getMonth() + 1;
@@ -82,7 +84,36 @@ export class FullCalendarPage implements OnInit {
         this.dates.push(0);
       }
     }
+    
+    this.calculateWeeks();
   }
+
+  calculateWeeks(): void {
+    const weeks: any[] = [];
+    let currentWeek: any[] = [];
+
+    // Assuming 'dates' is an array containing all dates to be displayed
+    for (let i = 0; i < this.dates.length; i++) {
+      const date = this.dates[i];
+      
+      // Assuming 'numCols' is the number of days per week (e.g., 7 for a 7-day week)
+      if (i > 0 && i % this.numCols === 0) {
+        weeks.push(currentWeek);
+        currentWeek = [];
+      }
+
+      currentWeek.push(date);
+    }
+
+    // Push the remaining days in the current week
+    if (currentWeek.length > 0) {
+      weeks.push(currentWeek);
+    }
+
+    this.weeks = weeks;
+    console.log("Weeks:", this.weeks);
+  }
+
 
   isDifferentMonth(date: number): boolean {
     return date === 0;
