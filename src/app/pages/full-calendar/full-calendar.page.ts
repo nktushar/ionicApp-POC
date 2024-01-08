@@ -154,4 +154,12 @@ export class FullCalendarPage implements OnInit {
       this.currentDate.getFullYear() === today.getFullYear()
     );
   }
+
+
+  // for event details box
+  showLess = true;
+
+  toggleShowLess(): void {
+    this.showLess = !this.showLess;
+  }
 }
