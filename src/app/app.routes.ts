@@ -18,7 +18,8 @@ export const routes: Routes = [
   {
     path: 'to-do',
     loadComponent: () => import('./pages/to-do/to-do.page').then( m => m.ToDoPage)
-  },  {
+  },
+  {
     path: 'progress-bar',
     loadComponent: () => import('./pages/progress-bar/progress-bar.page').then( m => m.ProgressBarPage)
   },
@@ -27,7 +28,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/full-calendar/full-calendar.page').then( m => m.FullCalendarPage)
   },
   {
-    path: 'toast-calendar',
+    path: 'google-calendar',
     loadComponent: () => import('./pages/toast-calendar/toast-calendar.page').then( m => m.ToastCalendarPage)
   },
 
