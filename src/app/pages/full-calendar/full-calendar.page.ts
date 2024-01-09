@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 interface Day {
@@ -10,10 +10,10 @@ interface Day {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-full-calendar',
   templateUrl: './full-calendar.page.html',
   styleUrls: ['./full-calendar.page.scss'],
-  standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule]
 })
 export class FullCalendarPage implements OnInit {

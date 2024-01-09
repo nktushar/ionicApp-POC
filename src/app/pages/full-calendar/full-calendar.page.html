@@ -35,7 +35,7 @@
           </div>
             <div>
               <!-- top part -->
-              <p [ngClass]="{ 'truncate': showLess }" class="overflow-hidden">
+              <p [ngClass]="{ 'line-clamp-2': showLess }">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia dolores iste pariatur quibusdam, nisi suscipit, architecto eum dignissimos illo minus soluta ex dolor doloremque iure numquam inventore accusamus doloribus minima.
               </p>
               <div (click)="showLess = !showLess" class=" flex justify-end text-blue-500 cursor-pointer">
@@ -78,10 +78,10 @@
           </div>
             <div>
               <!-- top part -->
-              <p [ngClass]="{ 'truncate': showLess }" class="overflow-hidden">
+              <p [ngClass]="{ 'line-clamp-2': showLess }" class="overflow-hidden">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia dolores iste pariatur quibusdam, nisi suscipit, architecto eum dignissimos illo minus soluta ex dolor doloremque iure numquam inventore accusamus doloribus minima.
               </p>
-              <div (click)="showLess = !showLess" class=" flex justify-end text-blue-500 cursor-pointer">
+              <div (click)="showLess = !showLess" class="flex justify-end  text-blue-500 cursor-pointer">
                 {{ showLess ? 'more' : 'less' }}
               </div>
 
@@ -198,7 +198,7 @@
                       [ngClass]="{
                         
                         'text-gray-600': !isToday(date),
-                        'text-slate-200': isDifferentMonth(date)
+                        'text-slate-100': isDifferentMonth(date)
                       }"
                     >
                       <div class="absolute top-0 right-0 m-2">
