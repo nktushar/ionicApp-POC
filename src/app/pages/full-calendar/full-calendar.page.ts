@@ -158,8 +158,5 @@ export class FullCalendarPage implements OnInit {
 
   // for event details box
   showLess = true;
-
-  toggleShowLess(): void {
-    this.showLess = !this.showLess;
-  }
+  
 }
