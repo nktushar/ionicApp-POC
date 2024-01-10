@@ -30,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'google-calendar',
     loadComponent: () => import('./pages/toast-calendar/toast-calendar.page').then( m => m.ToastCalendarPage)
+  },  {
+    path: 'design-component',
+    loadComponent: () => import('./pages/design-component/design-component.page').then( m => m.DesignComponentPage)
   },
+
 
 ];
