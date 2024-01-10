@@ -70,7 +70,10 @@
               </div>
               <div>
                 <!-- top part -->
-                <p [ngClass]="{ 'line-clamp-2': showLess }">
+                <p
+                  class="font-poppins"
+                  [ngClass]="{ 'line-clamp-2': showLess }"
+                >
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Officia dolores iste pariatur quibusdam, nisi suscipit,
                   architecto eum dignissimos illo minus soluta ex dolor
@@ -78,9 +81,9 @@
                 </p>
                 <div
                   (click)="showLess = !showLess"
-                  class="flex justify-end text-blue-500 cursor-pointer"
+                  class="flex justify-end text-blue-500 underline cursor-pointer"
                 >
-                  <u> {{ showLess ? 'more' : 'less' }} </u>
+                  {{ showLess ? 'more' : 'less' }}
                 </div>
                 <div
                   class="w-full border-t-2 border-dashed my-1 border-green-400"
@@ -140,9 +143,9 @@
                 </p>
                 <div
                   (click)="showLess = !showLess"
-                  class="flex justify-end text-blue-500 cursor-pointer"
+                  class="flex justify-end text-blue-500 underline cursor-pointer"
                 >
-                  <u>{{ showLess ? 'more' : 'less' }}</u>
+                  {{ showLess ? 'more' : 'less' }}
                 </div>
                 <div
                   class="w-full border-t-2 border-dashed my-1 border-blue-400"
