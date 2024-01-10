@@ -27,3 +27,22 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: "Gotham Book";
+  src:
+    url("./assets/fonts/Gotham-Book_Web.woff2") format("woff2"),
+    url("./assets/fonts/Gotham-Book_Web.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gotham Medium";
+  src:
+    url("./assets/fonts/Gotham-Medium_Web.woff2") format("woff2"),
+    url("./assets/fonts/Gotham-Medium_Web.woff") format("woff");
+}
+
+* {
+  font-family: "Gotham Book";
+  --ion-font-family: "Gotham Book";
+}

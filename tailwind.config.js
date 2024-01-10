@@ -5,8 +5,9 @@ module.exports = {
     extend: {},
     fontFamily: {
       // sans: ['"Segoe UI"', "Roboto", "sans-serif"],
-      poppins: ["Poppins", "sans-serif"],
-      roboto: ["Roboto", "sans-serif"],
+      // poppins: ["Poppins", "sans-serif"],
+      // roboto: ["Roboto", "sans-serif"],
+      gothamMedium: ["Gotham Medium", "sans-serif"],
     },
   },
   plugins: [],
