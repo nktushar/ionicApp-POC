@@ -14,7 +14,7 @@ interface Day {
   selector: 'app-full-calendar',
   templateUrl: './full-calendar.page.html',
   styleUrls: ['./full-calendar.page.scss'],
-  imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule]
+  imports: [IonicModule, CommonModule, FormsModule, FontAwesomeModule],
 })
 export class FullCalendarPage implements OnInit {
   currentDate: Date = new Date();
@@ -24,7 +24,7 @@ export class FullCalendarPage implements OnInit {
   });
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   dates: number[] = [];
-  notes: { date: number, month: number, year: number }[] = [
+  notes: { date: number; month: number; year: number }[] = [
     { date: 5, month: 1, year: 2024 },
     { date: 7, month: 12, year: 2023 },
     { date: 15, month: 12, year: 2023 },
@@ -35,11 +35,15 @@ export class FullCalendarPage implements OnInit {
 
   hasNotes(date: number): boolean {
     const currentMonth = this.currentDate.getMonth() + 1;
-  const currentYear = this.currentDate.getFullYear();
+    const currentYear = this.currentDate.getFullYear();
 
-  return this.notes.some(note => {
-    return note.date === date && note.month === currentMonth && note.year === currentYear;
-  });
+    return this.notes.some((note) => {
+      return (
+        note.date === date &&
+        note.month === currentMonth &&
+        note.year === currentYear
+      );
+    });
   }
 
   ngOnInit(): void {
@@ -50,12 +54,12 @@ export class FullCalendarPage implements OnInit {
     const daysInMonth = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() + 1,
-      0
+      0,
     ).getDate();
     const firstDayOfMonth = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth(),
-      1
+      1,
     ).getDay();
 
     this.dates = Array.from({ length: daysInMonth }, (_, i) => i + 1);
@@ -84,7 +88,7 @@ export class FullCalendarPage implements OnInit {
         this.dates.push(0);
       }
     }
-    
+
     this.calculateWeeks();
   }
 
@@ -95,7 +99,7 @@ export class FullCalendarPage implements OnInit {
     // Assuming 'dates' is an array containing all dates to be displayed
     for (let i = 0; i < this.dates.length; i++) {
       const date = this.dates[i];
-      
+
       // Assuming 'numCols' is the number of days per week (e.g., 7 for a 7-day week)
       if (i > 0 && i % this.numCols === 0) {
         weeks.push(currentWeek);
@@ -111,9 +115,8 @@ export class FullCalendarPage implements OnInit {
     }
 
     this.weeks = weeks;
-    console.log("Weeks:", this.weeks);
+    console.log('Weeks:', this.weeks);
   }
-
 
   isDifferentMonth(date: number): boolean {
     return date === 0;
@@ -155,8 +158,26 @@ export class FullCalendarPage implements OnInit {
     );
   }
 
+  eventList = [
+    { text: 'Item 1', date: 5 },
+    { text: 'Item 2', date: 5 },
+    { text: 'Item 3', date: 15 },
+  ];
+  selectedData: any;
+  isBoxVisible = false;
+
+  onItemClick(item: any, date: number) {
+    if (item.date === date) {
+      this.selectedData = item;
+      this.isBoxVisible = true;
+    }
+  }
+
+  onCloseBox() {
+    this.isBoxVisible = false;
+    this.selectedData = null;
+  }
 
   // for event details box
   showLess = true;
-  
 }

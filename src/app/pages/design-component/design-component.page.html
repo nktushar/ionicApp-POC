@@ -185,7 +185,27 @@
 
       <!-- new section -->
       <!-- ------------ -->
-      <div></div>
+      <div>
+        <ul class="bg-gray-400">
+          <li
+            class="cursor-pointer"
+            *ngFor="let item of dataList"
+            (click)="onItemClick(item)"
+          >
+            {{ item.name }}
+          </li>
+        </ul>
+
+        <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
+          <p>{{ selectedData.name }}</p>
+          <button
+            class="bg-blue-500 text-white px-2 rounded-sm"
+            (click)="onCloseBox()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
       <!-- -------------  -->
     </div>
   </div>

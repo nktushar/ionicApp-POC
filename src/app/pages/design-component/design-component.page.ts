@@ -18,6 +18,21 @@ export class DesignComponentPage implements OnInit {
   // for event details box
   showLess = true;
 
-  longText =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla.';
+  dataList = [
+    { name: 'Item 1', otherProperty: 'Value 1' },
+    { name: 'Item 2', otherProperty: 'Value 2' },
+    { name: 'Item 3', otherProperty: 'Value 3' },
+  ];
+  selectedData: any;
+  isBoxVisible = false;
+
+  onItemClick(item: any) {
+    this.selectedData = item;
+    this.isBoxVisible = true;
+  }
+
+  onCloseBox() {
+    this.isBoxVisible = false;
+    this.selectedData = null;
+  }
 }
