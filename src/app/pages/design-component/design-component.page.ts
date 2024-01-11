@@ -35,4 +35,8 @@ export class DesignComponentPage implements OnInit {
     this.isBoxVisible = false;
     this.selectedData = null;
   }
+
+  isNotification() {
+    return false;
+  }
 }
