@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { FindingCardComponent } from 'src/app/components/finding-card/finding-card.component';
 
 @Component({
   selector: 'app-design-component',
   templateUrl: './design-component.page.html',
   styleUrls: ['./design-component.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, FindingCardComponent],
 })
 export class DesignComponentPage implements OnInit {
   constructor() {}
