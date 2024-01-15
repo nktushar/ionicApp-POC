@@ -53,63 +53,7 @@
       <!-- CARDS -->
       <!-- ------------- -->
       <!-- Card 1 -->
-      <div class="max-w-96 mx-auto pb-10">
-        <div class="relative overflow-hidden rounded-md">
-          <div
-            class="bg-white border-1 border-green-400 rounded-md p-3 text-sm relative"
-          >
-            <div
-              class="absolute top-0 right-0 w-5 h-5 rounded-full bg-slate-200 border-1 border-green-600 flex transform translate-x-1 -translate-y-1"
-            >
-              <div
-                class="mx-auto my-auto w-3 h-3 rounded-full bg-green-600 shadow-md"
-              ></div>
-            </div>
-            <div>
-              <!-- top part -->
-              <p class="" [ngClass]="{ 'line-clamp-2': showLess }">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Officia dolores iste pariatur quibusdam, nisi suscipit,
-                architecto eum dignissimos illo minus soluta ex dolor doloremque
-                iure numquam inventore accusamus doloribus minima.
-              </p>
-              <div
-                (click)="showLess = !showLess"
-                class="flex justify-end text-blue-500 underline cursor-pointer"
-              >
-                {{ showLess ? 'more' : 'less' }}
-              </div>
-              <div
-                class="w-full border-t-2 border-dashed my-1 border-green-400"
-              ></div>
-              <!-- bottom part -->
-              <div class="flex justify-between font-bold mt-2">
-                <div class="">
-                  <ion-icon
-                    class="text-xl text-green-600"
-                    name="analytics-outline"
-                  ></ion-icon>
-                  <p>Material</p>
-                </div>
-                <div clsss="">
-                  <ion-icon
-                    class="text-xl text-green-600"
-                    name="calendar-clear-outline"
-                  ></ion-icon>
-                  <p>31 Jan 2024</p>
-                </div>
-                <div class="">
-                  <ion-icon
-                    class="text-xl text-green-600"
-                    name="person-outline"
-                  ></ion-icon>
-                  <p>john.doe&#64;holcim.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-assessment-card></app-assessment-card>
 
       <!-- Action Card -->
       <app-action-card></app-action-card>

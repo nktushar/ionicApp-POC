@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-assessment-card',
   templateUrl: './assessment-card.component.html',
   styleUrls: ['./assessment-card.component.scss'],
+  standalone: true,
+  imports: [IonicModule],
 })
-export class AssessmentCardComponent  implements OnInit {
-
-  constructor() { }
+export class AssessmentCardComponent implements OnInit {
+  constructor() {}
 
   ngOnInit() {}
-
 }

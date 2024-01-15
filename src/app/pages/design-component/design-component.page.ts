@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FindingCardComponent } from 'src/app/components/finding-card/finding-card.component';
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
+import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 
 @Component({
   selector: 'app-design-component',
@@ -16,6 +17,7 @@ import { ActionCardComponent } from 'src/app/components/action-card/action-card.
     FormsModule,
     FindingCardComponent,
     ActionCardComponent,
+    AssessmentCardComponent,
   ],
 })
 export class DesignComponentPage implements OnInit {
