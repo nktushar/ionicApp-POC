@@ -10,6 +10,5 @@ import { IonicModule } from '@ionic/angular';
 })
 export class AssessmentCardComponent implements OnInit {
   constructor() {}
-
   ngOnInit() {}
 }
