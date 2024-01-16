@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,6 +9,10 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class AssessmentCardComponent implements OnInit {
+  @Input() borderColor: string = 'border-green-600';
+  @Input() background: string = 'bg-green-700';
+  @Input() progressColor: string = 'success';
+
   constructor() {}
   ngOnInit() {}
 }

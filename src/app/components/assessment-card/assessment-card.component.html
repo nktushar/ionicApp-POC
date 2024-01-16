@@ -1,13 +1,16 @@
 <div class="max-w-96 mx-auto pb-10">
   <div class="relative rounded-md overflow-hidden">
     <div
-      class="bg-white border-2 border-green-600 rounded-md p-3 text-sm relative"
+      class="bg-white border-2 rounded-md p-3 text-sm relative"
+      [class]="borderColor"
     >
       <div
-        class="absolute top-0 right-0 w-14 h-14 rounded-full bg-slate-200 border-2 border-green-600 flex transform translate-x-2.5 -translate-y-2.5"
+        class="absolute top-0 right-0 w-14 h-14 rounded-full bg-slate-200 border-2 flex transform translate-x-2.5 -translate-y-2.5"
+        [class]="borderColor"
       >
         <div
-          class="mx-auto my-auto w-10 h-10 rounded-full bg-green-700 shadow-md flex"
+          class="mx-auto my-auto w-10 h-10 rounded-full shadow-md flex"
+          [class]="background"
         >
           <ion-icon
             class="text-2xl mx-auto my-auto text-white"
@@ -21,20 +24,26 @@
         <div>
           <p class="font-bold mb-3">2023-SIM-Black lane quarry</p>
         </div>
-        <div class="my-2 border-t-[1.5px] border-dashed border-green-500"></div>
+        <div
+          class="my-2 border-t-[1.5px] border-dashed"
+          [class]="borderColor"
+        ></div>
         <!-- middle part -->
         <div class="flex justify-between m-2 py-1">
           <div clsss="">
             <p class="text-xs">Created by</p>
             <p class="font-bold text-xs">john.doe&#64;holcim.com</p>
           </div>
-          <div class="border-l-[2px] border-green-500"></div>
+          <div class="border-l-[2px]" [class]="borderColor"></div>
           <div class="">
             <p class="text-xs">Assign to</p>
             <p class="font-bold text-xs">joyce.smith&#64;holcim.com</p>
           </div>
         </div>
-        <div class="my-2 border-t-[1.5px] border-dashed border-green-500"></div>
+        <div
+          class="my-2 border-t-[1.5px] border-dashed"
+          [class]="borderColor"
+        ></div>
         <!-- bottom part -->
         <div class="flex justify-between mt-2">
           <div clsss="">
@@ -45,7 +54,7 @@
             <ion-progress-bar
               class="my-1 rounded-full h-[5px]"
               value="0.50"
-              color="success"
+              [color]="progressColor"
             ></ion-progress-bar>
             <p class="text-xs">10/20</p>
           </div>

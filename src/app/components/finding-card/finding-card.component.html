@@ -1,7 +1,10 @@
 <div class="max-w-96 mx-auto pb-10">
   <div class="rounded-md">
     <div class="">
-      <div class="bg-white border-2 border-orange-500 rounded-md p-2.5 text-sm">
+      <div
+        class="bg-white border-2 rounded-md p-2.5 text-sm"
+        [class]="borderColor"
+      >
         <div>
           <!-- top part -->
           <div class="flex gap-3">
@@ -18,7 +21,7 @@
               </button>
             </div>
           </div>
-          <hr class="my-2 border-t-[1.5px] border-orange-400" />
+          <div class="my-2 border-t-[1.5px]" [class]="innerLineColor"></div>
           <!-- middle part -->
           <div class="flex justify-between mt-2">
             <div clsss="">
@@ -29,35 +32,36 @@
                 LEVEL 2
               </button>
             </div>
-            <div class="border-l-[1.5px] border-orange-200"></div>
+            <div class="border-l-[1.5px]" [class]="innerLineColor"></div>
             <div class="">
               <p class="text-xs">Due date</p>
               <p class="font-bold text-xs">1<sup>st</sup> Jan 2023</p>
             </div>
-            <div class="border-l-[1.5px] border-orange-200"></div>
+            <div class="border-l-[1.5px]" [class]="innerLineColor"></div>
             <div class="">
               <p class="text-xs">Created by</p>
               <p class="font-bold text-xs">joyce.smith&#64;holcim.com</p>
             </div>
           </div>
-          <hr class="my-2 border-t-[1.5px] border-orange-400" />
+          <div class="my-2 border-t-[1.5px]" [class]="innerLineColor"></div>
           <!-- bottom part -->
           <div class="flex mt-2 items-center">
             <div class="">
-              <div class="bubble bg-orange-500 text-white">
+              <div class="bubble text-white" [class]="background">
                 <ion-icon
                   name="pencil-outline"
                   class="text-2xl mx-auto my-auto"
                 ></ion-icon>
               </div>
-              <div class="pointer bg-orange-500"></div>
+              <div class="pointer" [class]="background"></div>
             </div>
             <div
               class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
             ></div>
             <div>
               <div
-                class="bubble bg-orange-100 text-orange-500 border-2 border-orange-500"
+                class="bubble text-orange-500 border-2 border-orange-500"
+                [class]="backgroundLight"
               >
                 <ion-icon
                   name="create-outline"
@@ -65,7 +69,8 @@
                 ></ion-icon>
               </div>
               <div
-                class="pointer bg-orange-100 border-b-2 border-r-2 border-orange-500"
+                class="pointer border-b-2 border-r-2 border-orange-500"
+                [class]="backgroundLight"
               ></div>
             </div>
             <div
@@ -73,7 +78,7 @@
             ></div>
             <div class="flex items-center">
               <div>
-                <div class="bubble bg-orange-100 text-slate-400">
+                <div class="bubble text-slate-400" [class]="backgroundLight">
                   <ion-icon
                     name="cash-outline"
                     class="text-2xl mx-auto my-auto"

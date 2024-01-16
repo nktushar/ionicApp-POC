@@ -14,7 +14,7 @@ export class ActionCardComponent implements OnInit {
   @Input() arrowColor: string = 'text-blue-800';
   // arrow: string = this.arrowBg + ' ' + this.arrowColor;
   @Input() starColor: string = 'text-blue-900';
-  @Input() innerLinesColor: string = 'border-blue-300';
+  @Input() innerLinesColor: string = 'border-blue-100';
 
   constructor() {}
 
