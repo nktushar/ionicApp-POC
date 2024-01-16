@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,6 +9,13 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class ActionCardComponent implements OnInit {
+  @Input() borderColor: string = 'border-blue-900';
+  @Input() arrowBg: string = 'bg-blue-100';
+  @Input() arrowColor: string = 'text-blue-800';
+  // arrow: string = this.arrowBg + ' ' + this.arrowColor;
+  @Input() starColor: string = 'text-blue-900';
+  @Input() innerLinesColor: string = 'border-blue-300';
+
   constructor() {}
 
   ngOnInit() {}
