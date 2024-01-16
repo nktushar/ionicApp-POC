@@ -48,4 +48,11 @@ export class DesignComponentPage implements OnInit {
   isNotification() {
     return false;
   }
+
+  isMenuOpen = false;
+  menuContent = 'Menu Content'; // Replace with your actual menu content
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
