@@ -49,10 +49,10 @@ export class DesignComponentPage implements OnInit {
     return false;
   }
 
-  isMenuOpen = false;
-  menuContent = 'Menu Content'; // Replace with your actual menu content
+  // isMenuOpen = false;
+  // menuContent = 'Menu Content'; // Replace with your actual menu content
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  // toggleMenu() {
+  //   this.isMenuOpen = !this.isMenuOpen;
+  // }
 }
