@@ -49,10 +49,21 @@ export class DesignComponentPage implements OnInit {
     return false;
   }
 
-  // isMenuOpen = false;
-  // menuContent = 'Menu Content'; // Replace with your actual menu content
-
-  // toggleMenu() {
-  //   this.isMenuOpen = !this.isMenuOpen;
+  // openNav() {
+  //   document.getElementById("mySidenav").style.width = "250px";
   // }
+
+  // closeNav() {
+  //   document.getElementById("mySidenav").style.width = "0";
+  // }
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }

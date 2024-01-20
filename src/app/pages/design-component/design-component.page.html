@@ -125,11 +125,26 @@
       </div>
 
       <!-- Custom Menu -->
-      <ion-fab class="fixed left-16" vertical="bottom" horizontal="start">
-        <ion-fab-button>
-          <ion-icon name="pencil-outline"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+      <div
+        *ngIf="isMenuOpen"
+        class="fixed top-0 right-0 h-full w-32 bg-gray-800 text-white p-4 trans transform ease-in-out"
+      >
+        <!-- Your menu content goes here -->
+        <button
+          (click)="closeMenu()"
+          class="absolute top-50 right-2 text-white hover:text-gray-300"
+        >
+          <i class="fas fa-times mt-24"></i>
+        </button>
+        <p>Menu Content</p>
+      </div>
+
+      <button
+        (click)="toggleMenu()"
+        class="fixed top-20 right-2 text-white bg-blue-500 px-4 py-2 rounded"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </div>
 </ion-content>
