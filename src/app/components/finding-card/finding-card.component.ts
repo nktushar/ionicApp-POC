@@ -9,11 +9,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class FindingCardComponent implements OnInit {
-  @Input() borderColor: string = 'border-orange-500';
-  @Input() background: string = 'bg-orange-500';
-  @Input() backgroundLight: string = 'bg-orange-100';
-  @Input() innerLineColor: string = 'border-orange-100';
-  @Input() inconColor: string = 'text-orange-500';
+  @Input() isOverdue: boolean = false;
 
   constructor() {}
 
