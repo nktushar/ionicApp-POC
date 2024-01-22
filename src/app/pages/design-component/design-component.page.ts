@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { FindingCardComponent } from 'src/app/components/finding-card/finding-card.component';
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
+import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 
 @Component({
   selector: 'app-design-component',
@@ -18,6 +19,7 @@ import { AssessmentCardComponent } from 'src/app/components/assessment-card/asse
     FindingCardComponent,
     ActionCardComponent,
     AssessmentCardComponent,
+    SideMenuComponent,
   ],
 })
 export class DesignComponentPage implements OnInit {
