@@ -9,12 +9,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class ActionCardComponent implements OnInit {
-  @Input() borderColor: string = 'border-blue-900';
-  @Input() arrowBg: string = 'bg-blue-100';
-  @Input() arrowColor: string = 'text-blue-800';
-  // arrow: string = this.arrowBg + ' ' + this.arrowColor;
-  @Input() starColor: string = 'text-blue-900';
-  @Input() innerLinesColor: string = 'border-blue-100';
+  @Input() isOverdue: boolean = false;
 
   constructor() {}
 
@@ -26,5 +21,6 @@ export class ActionCardComponent implements OnInit {
 
   toggleIcon() {
     this.isStarOutline = !this.isStarOutline;
+    console.log('toggleIcon()', this.isStarOutline);
   }
 }
