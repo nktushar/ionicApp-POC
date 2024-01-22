@@ -93,13 +93,13 @@
               <p class="text-xs">Due date</p>
               <p class="font-bold text-xs">1<sup>st</sup> Jan 2023</p>
             </div>
-            <div (click)="toggleIcon()">
+            <button (click)="toggleIcon()">
               <ion-icon
                 class="text-3xl"
                 [name]="isStarOutline ? 'star-outline' : 'star'"
                 [class]="isOverdue ? 'text-red-600' : 'text-blue-900'"
               ></ion-icon>
-            </div>
+            </button>
           </div>
         </div>
       </div>

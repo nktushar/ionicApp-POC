@@ -19,8 +19,8 @@ export class ActionCardComponent implements OnInit {
 
   isStarOutline = true;
 
-  toggleIcon() {
+  toggleIcon(): void {
     this.isStarOutline = !this.isStarOutline;
-    console.log('toggleIcon()', this.isStarOutline);
+    console.log('toggleIcon');
   }
 }

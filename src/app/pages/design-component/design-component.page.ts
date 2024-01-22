@@ -25,8 +25,6 @@ export class DesignComponentPage implements OnInit {
 
   ngOnInit() {}
 
-  showLess = true;
-
   dataList = [
     { name: 'Item 1', otherProperty: 'Value 1' },
     { name: 'Item 2', otherProperty: 'Value 2' },
@@ -43,27 +41,5 @@ export class DesignComponentPage implements OnInit {
   onCloseBox() {
     this.isBoxVisible = false;
     this.selectedData = null;
-  }
-
-  isNotification() {
-    return false;
-  }
-
-  // openNav() {
-  //   document.getElementById("mySidenav").style.width = "250px";
-  // }
-
-  // closeNav() {
-  //   document.getElementById("mySidenav").style.width = "0";
-  // }
-
-  isMenuOpen = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
   }
 }

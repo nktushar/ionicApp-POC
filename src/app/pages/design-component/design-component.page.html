@@ -50,21 +50,8 @@
         </div>
       </div>
 
-      <!-- CARDS -->
-      <!-- ------------- -->
-      <!-- Assessment Card -->
-      <app-assessment-card [isOverdue]="false"></app-assessment-card>
-
-      <!-- Action Card -->
-      <app-action-card [isOverdue]="false"></app-action-card>
-
-      <!-- Finding Card -->
-      <app-finding-card [isOverdue]="false"></app-finding-card>
-      <!-- ------------- -->
-
       <!-- Click item box show -->
-      <!-- ------------ -->
-      <div class="w-24 mx-auto">
+      <div class="w-24 mx-auto mb-10">
         <ul class="bg-gray-400 rounded-lg p-2">
           <li
             class="cursor-pointer"
@@ -87,49 +74,16 @@
       </div>
       <!-- -------------  -->
 
-      <ion-menu-toggle>
-        <ion-fab class="fixed right-24" vertical="bottom" horizontal="end">
-          <ion-fab-button>
-            <ion-icon name="pencil-outline"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-      </ion-menu-toggle>
+      <!-- CARDS -->
+      <!-- ------------- -->
+      <!-- Assessment Card -->
+      <app-assessment-card [isOverdue]="false"></app-assessment-card>
 
-      <ion-menu side="end" contentId="main-content">
-        <ion-content class="ion-padding"> </ion-content>
-        <!-- save button -->
-        <div class="">
-          <ion-icon
-            class="bg-blue-500 p-3 rounded-full"
-            name="save-outline"
-          ></ion-icon>
-        </div>
-      </ion-menu>
-      <div class="ion-page" id="main-content">
-        <!-- <ion-content class="ion-padding"> </ion-content> -->
-      </div>
+      <!-- Action Card -->
+      <app-action-card [isOverdue]="true"></app-action-card>
 
-      <!-- Custom Menu -->
-      <div
-        *ngIf="isMenuOpen"
-        class="fixed top-0 right-0 h-full w-32 bg-gray-800 text-white p-4 trans transform ease-in-out"
-      >
-        <!-- Your menu content goes here -->
-        <button
-          (click)="closeMenu()"
-          class="absolute top-50 right-2 text-white hover:text-gray-300"
-        >
-          <i class="fas fa-times mt-24"></i>
-        </button>
-        <p>Menu Content</p>
-      </div>
-
-      <button
-        (click)="toggleMenu()"
-        class="fixed top-20 right-2 text-white bg-blue-500 px-4 py-2 rounded"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+      <!-- Finding Card -->
+      <app-finding-card [isOverdue]="false"></app-finding-card>
     </div>
   </div>
 </ion-content>
