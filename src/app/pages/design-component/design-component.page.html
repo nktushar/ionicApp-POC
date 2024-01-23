@@ -2,26 +2,25 @@
   <div class="h-screen flex overflow-hidden bg-gray-200">
     <!-- Sidebar -->
     <div
-      class="absolute z-10 right-0 bg-white text-white w-28 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-xl"
+      class="absolute right-0 bg-white w-28 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-xl"
       id="sidebar"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
       <!-- Your Sidebar Content -->
       <div class="p-4">
-        <span class="text-2xl font-semibold mr-2">Sidebar</span>
         <span class="cursor-pointer" (click)="onMenuClick()">CLOSE</span>
         <ul class="mt-4">
           <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">Home</a>
+            <a href="#" class="block hover:text-indigo-400">1</a>
           </li>
           <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">About</a>
+            <a href="#" class="block hover:text-indigo-400">2</a>
           </li>
           <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">Services</a>
+            <a href="#" class="block hover:text-indigo-400">3</a>
           </li>
           <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">Contact</a>
+            <a href="#" class="block hover:text-indigo-400">4</a>
           </li>
         </ul>
       </div>
@@ -144,11 +143,7 @@
           </div>
         </div>
 
-        <button
-          class="fixed bottom-3 right-20"
-          mat-raised-button
-          (click)="onMenuClick()"
-        >
+        <button class="fixed bottom-8 right-20" (click)="onMenuClick()">
           <ion-icon
             class="bg-cyan-700 text-white text-4xl p-3 rounded-full"
             name="brush-outline"
