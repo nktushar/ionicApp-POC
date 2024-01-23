@@ -7,6 +7,7 @@ import { ActionCardComponent } from 'src/app/components/action-card/action-card.
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-design-component',
@@ -25,6 +26,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   ],
 })
 export class DesignComponentPage implements OnInit {
+  isMenuOpen = false;
+
+  onMenuClick() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   constructor() {}
 
   ngOnInit() {}
