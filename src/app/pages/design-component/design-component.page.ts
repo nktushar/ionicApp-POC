@@ -6,6 +6,7 @@ import { FindingCardComponent } from 'src/app/components/finding-card/finding-ca
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-design-component',
@@ -20,6 +21,7 @@ import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.compon
     ActionCardComponent,
     AssessmentCardComponent,
     SideMenuComponent,
+    MatSidenavModule,
   ],
 })
 export class DesignComponentPage implements OnInit {
