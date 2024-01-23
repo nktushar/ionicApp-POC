@@ -1,134 +1,15 @@
 <ion-content>
-  <mat-drawer-container class="example-container" [hasBackdrop]="false">
-    <mat-drawer class="w-24 h-screen" position="end" #drawer [mode]="'over'"
-      >I'm a drawer</mat-drawer
-    >
-    <mat-drawer-content>
-      <ion-header>
-        <ion-toolbar class="bg-secondary">
-          <ion-title class="text-center">Components</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <div class="bg-slate-200 h-auto">
-        <div class="container max-w-6xl">
-          <!-- Progress Bar -->
-          <div class="flex pt-4 mb-5 items-center">
-            <div class="">
-              <div class="bubble bg-cyan-700 text-white">
-                <ion-icon
-                  name="pencil-outline"
-                  class="text-2xl mx-auto my-auto"
-                ></ion-icon>
-              </div>
-              <div class="pointer bg-cyan-700"></div>
-            </div>
-            <div
-              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
-            ></div>
-            <div>
-              <div
-                class="bubble bg-cyan-100 text-cyan-700 border-2 border-cyan-700"
-              >
-                <ion-icon
-                  name="create-outline"
-                  class="text-2xl mx-auto my-auto"
-                ></ion-icon>
-              </div>
-              <div
-                class="pointer bg-cyan-100 border-b-2 border-r-2 border-cyan-700"
-              ></div>
-            </div>
-            <div
-              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
-            ></div>
-            <div class="flex items-center">
-              <div>
-                <div class="bubble bg-cyan-100 text-slate-400">
-                  <ion-icon
-                    name="cash-outline"
-                    class="text-2xl mx-auto my-auto"
-                  ></ion-icon>
-                </div>
-                <div class="pointer bg-cyan-100"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Click item box show -->
-          <div class="w-24 mx-auto mb-10">
-            <ul class="bg-gray-400 rounded-lg p-2">
-              <li
-                class="cursor-pointer"
-                *ngFor="let item of dataList"
-                (click)="onItemClick(item)"
-              >
-                {{ item.name }}
-              </li>
-            </ul>
-
-            <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
-              <p>{{ selectedData.name }}</p>
-              <button
-                class="bg-blue-500 text-white px-2 rounded-sm"
-                (click)="onCloseBox()"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-          <!-- -------------  -->
-
-          <!-- CARDS -->
-          <!-- ------------- -->
-          <!-- Assessment Card -->
-          <app-assessment-card [isOverdue]="false"></app-assessment-card>
-
-          <!-- Action Card -->
-          <app-action-card [isOverdue]="true"></app-action-card>
-
-          <!-- Finding Card -->
-          <app-finding-card [isOverdue]="false"></app-finding-card>
-        </div>
-      </div>
-      <!-- <mat-form-field>
-        <mat-label>Sidenav mode</mat-label>
-        <mat-select #mode value="side">
-          <mat-option value="side">Side</mat-option>
-          <mat-option value="over">Over</mat-option>
-          <mat-option value="push">Push</mat-option>
-        </mat-select>
-      </mat-form-field> -->
-      <!-- <mat-form-field>
-        <mat-label>Has backdrop</mat-label>
-        <mat-select #hasBackdrop>
-          <mat-option>Unset</mat-option>
-          <mat-option [value]="true">True</mat-option>
-          <mat-option [value]="false">False</mat-option>
-        </mat-select>
-      </mat-form-field> -->
-      <button
-        class="fixed bottom-3 right-20"
-        mat-raised-button
-        (click)="drawer.toggle()"
-      >
-        <ion-icon
-          class="bg-cyan-700 text-white text-4xl p-3 rounded-full"
-          name="brush-outline"
-        ></ion-icon>
-      </button>
-    </mat-drawer-content>
-  </mat-drawer-container>
-
   <div class="h-screen flex overflow-hidden bg-gray-200">
     <!-- Sidebar -->
     <div
-      class="absolute right-0 bg-gray-800 text-white w-56 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300"
+      class="absolute z-10 right-0 bg-white text-white w-28 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-xl"
       id="sidebar"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
       <!-- Your Sidebar Content -->
       <div class="p-4">
-        <h1 class="text-2xl font-semibold">Sidebar</h1>
+        <span class="text-2xl font-semibold mr-2">Sidebar</span>
+        <span class="cursor-pointer" (click)="onMenuClick()">CLOSE</span>
         <ul class="mt-4">
           <li class="mb-2">
             <a href="#" class="block hover:text-indigo-400">Home</a>
@@ -149,10 +30,10 @@
     <!-- Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Navbar -->
-      <div class="bg-white shadow">
+      <div class="bg-cyan-700 text-white shadow">
         <div class="container mx-auto">
           <div class="flex justify-between items-center py-4 px-2">
-            <h1 class="text-xl font-semibold">Animated Drawer</h1>
+            <h1 class="text-xl font-semibold">Components Page</h1>
 
             <button
               class="text-gray-500 hover:text-gray-600"
@@ -179,8 +60,100 @@
       </div>
       <!-- Content Body -->
       <div class="flex-1 overflow-auto p-4">
-        <h1 class="text-2xl font-semibold">Welcome to our website</h1>
-        <p>... Content goes here ...</p>
+        >
+
+        <div class="bg-slate-200 h-auto">
+          <div class="container max-w-6xl">
+            <!-- Progress Bar -->
+            <div class="flex pt-4 mb-5 items-center">
+              <div class="">
+                <div class="bubble bg-cyan-700 text-white">
+                  <ion-icon
+                    name="pencil-outline"
+                    class="text-2xl mx-auto my-auto"
+                  ></ion-icon>
+                </div>
+                <div class="pointer bg-cyan-700"></div>
+              </div>
+              <div
+                class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+              ></div>
+              <div>
+                <div
+                  class="bubble bg-cyan-100 text-cyan-700 border-2 border-cyan-700"
+                >
+                  <ion-icon
+                    name="create-outline"
+                    class="text-2xl mx-auto my-auto"
+                  ></ion-icon>
+                </div>
+                <div
+                  class="pointer bg-cyan-100 border-b-2 border-r-2 border-cyan-700"
+                ></div>
+              </div>
+              <div
+                class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+              ></div>
+              <div class="flex items-center">
+                <div>
+                  <div class="bubble bg-cyan-100 text-slate-400">
+                    <ion-icon
+                      name="cash-outline"
+                      class="text-2xl mx-auto my-auto"
+                    ></ion-icon>
+                  </div>
+                  <div class="pointer bg-cyan-100"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Click item box show -->
+            <div class="w-24 mx-auto mb-10">
+              <ul class="bg-gray-400 rounded-lg p-2">
+                <li
+                  class="cursor-pointer"
+                  *ngFor="let item of dataList"
+                  (click)="onItemClick(item)"
+                >
+                  {{ item.name }}
+                </li>
+              </ul>
+
+              <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
+                <p>{{ selectedData.name }}</p>
+                <button
+                  class="bg-blue-500 text-white px-2 rounded-sm"
+                  (click)="onCloseBox()"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+            <!-- -------------  -->
+
+            <!-- CARDS -->
+            <!-- ------------- -->
+            <!-- Assessment Card -->
+            <app-assessment-card [isOverdue]="false"></app-assessment-card>
+
+            <!-- Action Card -->
+            <app-action-card [isOverdue]="true"></app-action-card>
+
+            <!-- Finding Card -->
+            <app-finding-card [isOverdue]="false"></app-finding-card>
+          </div>
+        </div>
+
+        <button
+          class="fixed bottom-3 right-20"
+          mat-raised-button
+          (click)="onMenuClick()"
+        >
+          <ion-icon
+            class="bg-cyan-700 text-white text-4xl p-3 rounded-full"
+            name="brush-outline"
+          ></ion-icon>
+        </button>
       </div>
     </div>
   </div>
