@@ -2,27 +2,29 @@
   <div class="h-screen flex overflow-hidden bg-gray-200">
     <!-- Sidebar -->
     <div
-      class="absolute right-0 bg-white w-28 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-xl"
-      id="sidebar"
+      class="absolute right-0 bg-white w-28 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
-      <!-- Your Sidebar Content -->
-      <div class="p-4">
-        <span class="cursor-pointer" (click)="onMenuClick()">CLOSE</span>
-        <ul class="mt-4">
-          <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">1</a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">2</a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">3</a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="block hover:text-indigo-400">4</a>
-          </li>
-        </ul>
+      <div class="h-screen flex flex-col justify-between">
+        <!-- Your Sidebar Content -->
+        <div class="p-4">
+          <span class="cursor-pointer" (click)="onMenuClick()">CLOSE</span>
+          <ul class="mt-4">
+            <li class="mb-2">
+              <a href="#" class="block hover:text-indigo-400">1</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block hover:text-indigo-400">2</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block hover:text-indigo-400">3</a>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="block hover:text-indigo-400">4</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-10 h-20 bg-gray-200 mb-[33px] rounded-r-[200px]"></div>
       </div>
     </div>
 
