@@ -77,12 +77,17 @@ div[slot="content"] {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #c0dcdf;
+  box-shadow: inset 0 0 5px #edf5f5;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #007382;
+  background: #4ca1b1;
   border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1a818f;
 }
