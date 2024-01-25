@@ -2,7 +2,7 @@
   <div class="h-screen flex overflow-hidden bg-gray-200">
     <!-- Sidebar -->
     <div
-      class="curve absolute right-0 bg-transparent w-24 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl"
+      class="curve absolute right-0 bg-transparent w-24 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
       <div class="h-screen flex flex-col justify-between">
@@ -56,118 +56,99 @@
         <div class="container mx-auto">
           <div class="flex justify-between items-center py-4 px-2">
             <h1 class="text-xl font-semibold">Components Page</h1>
-
-            <button
-              class="text-gray-500 hover:text-gray-600"
-              id="open-sidebar"
-              (click)="onMenuClick()"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
       <!-- Content Body -->
       <div class="flex-1 overflow-auto p-4">
-        <div class="h-auto">
-          <div class="max-w-6xl mx-auto">
-            <!-- Progress Bar -->
-            <div class="flex mx-28 pt-4 mb-5 items-center">
-              <div class="">
-                <div class="bubble bg-cyan-700 text-white">
-                  <ion-icon
-                    name="pencil-outline"
-                    class="text-2xl mx-auto my-auto"
-                  ></ion-icon>
-                </div>
-                <div class="pointer bg-cyan-700"></div>
+        <div class="max-w-6xl h-auto mx-auto">
+          <!-- Progress Bar -->
+          <div class="flex mx-28 pt-4 mb-5 items-center">
+            <div class="">
+              <div class="bubble bg-cyan-700 text-white">
+                <ion-icon
+                  name="pencil-outline"
+                  class="text-2xl mx-auto my-auto"
+                ></ion-icon>
+              </div>
+              <div class="pointer bg-cyan-700"></div>
+            </div>
+            <div
+              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+            ></div>
+            <div>
+              <div
+                class="bubble bg-cyan-100 text-cyan-700 border-2 border-cyan-700"
+              >
+                <ion-icon
+                  name="create-outline"
+                  class="text-2xl mx-auto my-auto"
+                ></ion-icon>
               </div>
               <div
-                class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+                class="pointer bg-cyan-100 border-b-2 border-r-2 border-cyan-700"
               ></div>
+            </div>
+            <div
+              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+            ></div>
+            <div class="flex items-center">
               <div>
-                <div
-                  class="bubble bg-cyan-100 text-cyan-700 border-2 border-cyan-700"
-                >
+                <div class="bubble bg-cyan-100 text-slate-400">
                   <ion-icon
-                    name="create-outline"
+                    name="cash-outline"
                     class="text-2xl mx-auto my-auto"
                   ></ion-icon>
                 </div>
-                <div
-                  class="pointer bg-cyan-100 border-b-2 border-r-2 border-cyan-700"
-                ></div>
-              </div>
-              <div
-                class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
-              ></div>
-              <div class="flex items-center">
-                <div>
-                  <div class="bubble bg-cyan-100 text-slate-400">
-                    <ion-icon
-                      name="cash-outline"
-                      class="text-2xl mx-auto my-auto"
-                    ></ion-icon>
-                  </div>
-                  <div class="pointer bg-cyan-100"></div>
-                </div>
+                <div class="pointer bg-cyan-100"></div>
               </div>
             </div>
-
-            <!-- Click item box show -->
-            <div class="w-24 mx-auto mb-10">
-              <ul class="bg-gray-400 rounded-lg p-2">
-                <li
-                  class="cursor-pointer"
-                  *ngFor="let item of dataList"
-                  (click)="onItemClick(item)"
-                >
-                  {{ item.name }}
-                </li>
-              </ul>
-
-              <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
-                <p>{{ selectedData.name }}</p>
-                <button
-                  class="bg-blue-500 text-white px-2 rounded-sm"
-                  (click)="onCloseBox()"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-            <!-- -------------  -->
-
-            <!-- CARDS -->
-            <!-- ------------- -->
-            <!-- Assessment Card -->
-            <app-assessment-card [isOverdue]="false"></app-assessment-card>
-
-            <!-- Action Card -->
-            <app-action-card [isOverdue]="true"></app-action-card>
-
-            <!-- Finding Card -->
-            <app-finding-card [isOverdue]="false"></app-finding-card>
           </div>
+
+          <!-- Click item box show -->
+          <div class="w-24 mx-auto mb-10">
+            <ul class="bg-gray-400 rounded-lg p-2">
+              <li
+                class="cursor-pointer"
+                *ngFor="let item of dataList"
+                (click)="onItemClick(item)"
+              >
+                {{ item.name }}
+              </li>
+            </ul>
+
+            <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
+              <p>{{ selectedData.name }}</p>
+              <button
+                class="bg-blue-500 text-white px-2 rounded-sm"
+                (click)="onCloseBox()"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+          <!-- -------------  -->
+
+          <!-- CARDS -->
+          <!-- ------------- -->
+
+          <!-- Assessment Card -->
+          <app-assessment-card [isOverdue]="false"></app-assessment-card>
+
+          <!-- Action Card -->
+          <app-action-card [isOverdue]="false"></app-action-card>
+
+          <!-- Finding Card -->
+          <app-finding-card [isOverdue]="false"></app-finding-card>
         </div>
 
-        <button class="fixed bottom-8 right-16" (click)="onMenuClick()">
+        <button
+          class="fixed bottom-[35px] right-16 z-20"
+          (click)="onMenuClick()"
+        >
           <ion-icon
-            class="bg-cyan-700 text-white text-4xl p-3 rounded-full"
-            name="brush-outline"
+            class="bg-cyan-700 text-white text-3xl p-3 rounded-full"
+            [name]="isMenuOpen ? 'save-outline' : 'brush-outline'"
           ></ion-icon>
         </button>
       </div>
