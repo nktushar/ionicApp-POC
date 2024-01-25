@@ -23,12 +23,20 @@
               </ion-item>
               <div class="ion-padding" slot="content">First Content</div>
             </ion-accordion>
-            <ion-accordion value="second">
+            <ion-accordion class="max-h-96" value="second">
               <ion-item slot="header" color="cyan">
                 <ion-label
                   ><ion-icon class="text-xl" name="expand-outline"></ion-icon
                 ></ion-label>
               </ion-item>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
+              <div class="ion-padding" slot="content">Second Content</div>
               <div class="ion-padding" slot="content">Second Content</div>
               <div class="ion-padding" slot="content">Second Content</div>
               <div class="ion-padding" slot="content">Second Content</div>
@@ -65,20 +73,20 @@
           <!-- Progress Bar -->
           <div class="flex pt-4 mb-5 items-center">
             <div class="">
-              <div class="bubble bg-cyan-700 text-white">
+              <div class="bubble bg-[#007382] text-white">
                 <ion-icon
                   name="pencil-outline"
                   class="text-2xl mx-auto my-auto"
                 ></ion-icon>
               </div>
-              <div class="pointer bg-cyan-700"></div>
+              <div class="pointer bg-[#007382]"></div>
             </div>
             <div
-              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+              class="grow h-1 border-b-[1px] border-dashed border-[#007382]"
             ></div>
             <div>
               <div
-                class="bubble bg-cyan-100 text-cyan-700 border-2 border-cyan-700"
+                class="bubble bg-[#d6eaeb] text-[#007382] border-2 border-[#007382]"
               >
                 <ion-icon
                   name="create-outline"
@@ -86,21 +94,21 @@
                 ></ion-icon>
               </div>
               <div
-                class="pointer bg-cyan-100 border-b-2 border-r-2 border-cyan-700"
+                class="pointer bg-[#d6eaeb] border-b-2 border-r-2 border-[#007382]"
               ></div>
             </div>
             <div
-              class="grow h-1 border-b-[1px] border-dashed border-cyan-700"
+              class="grow h-1 border-b-[1px] border-dashed border-[#007382]"
             ></div>
             <div class="flex items-center">
               <div>
-                <div class="bubble bg-cyan-100 text-slate-400">
+                <div class="bubble bg-[#d6eaeb] text-slate-400">
                   <ion-icon
                     name="cash-outline"
                     class="text-2xl mx-auto my-auto"
                   ></ion-icon>
                 </div>
-                <div class="pointer bg-cyan-100"></div>
+                <div class="pointer bg-[#d6eaeb]"></div>
               </div>
             </div>
           </div>
@@ -147,7 +155,7 @@
           (click)="onMenuClick()"
         >
           <ion-icon
-            class="bg-cyan-700 text-white text-3xl p-3 rounded-full"
+            class="bg-[#007382] text-white text-3xl p-3 rounded-full"
             [name]="isMenuOpen ? 'save-outline' : 'brush-outline'"
           ></ion-icon>
         </button>

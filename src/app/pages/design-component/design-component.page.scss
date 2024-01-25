@@ -17,5 +17,9 @@
 }
 
 .curve {
-  background: radial-gradient(85% 80px at left 92%, transparent 50%, white 0%);
+  background: radial-gradient(
+    85% 80px at left calc(100% - 73px),
+    transparent 50%,
+    white 0%
+  );
 }
