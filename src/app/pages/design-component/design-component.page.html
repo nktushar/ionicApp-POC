@@ -1,19 +1,22 @@
 <ion-content>
-  <div class="h-screen flex overflow-hidden bg-gray-200">
+  <div class="h-screen flex overflow-hidden bg-gray-200 relative">
     <!-- Sidebar -->
     <div
-      class="curve absolute right-0 bg-transparent w-24 min-h-screen overflow-y-auto transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
+      class="curve absolute right-0 w-24 min-h-screen transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
       <div class="h-screen flex flex-col justify-between">
-        <!-- Your Sidebar Content -->
-        <div class="">
+        <!-- Sidebar Content -->
+        <div>
           <div class="cursor-pointer my-2 text-right" (click)="onMenuClick()">
             <ion-icon
               class="text-3xl font-bold mx-2"
               name="close-outline"
             ></ion-icon>
           </div>
+          <div
+            class="absolute left-0 h-10 w-10 bg-blue-500 -translate-x-2 z-30"
+          ></div>
           <div>
             <ion-accordion-group>
               <ion-accordion value="first">
@@ -25,10 +28,7 @@
                     ></ion-icon
                   ></ion-label>
                 </ion-item>
-                <div
-                  class="max-h-[570px] overflow-scroll ion-padding"
-                  slot="content"
-                >
+                <div class="max-h-[570px] ion-padding" slot="content">
                   <div
                     class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
                   >
@@ -97,77 +97,89 @@
                   class="max-h-[570px] ion-padding overflow-scroll"
                   slot="content"
                 >
-                  <div class="text-center text-3xl">
+                  <div
+                    class="mx-auto text-3xl h-[60px] w-[60px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                  >
+                    <img
+                      class="object-cover w-full h-full"
+                      src="../../../assets/silo.png"
+                      alt="silo"
+                    />
+                  </div>
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
+                  <div class="w-full text-xs text-center my-1">
+                    <span>Silo</span>
                   </div>
                 </div>
               </ion-accordion>
@@ -178,84 +190,88 @@
                   ></ion-label>
                 </ion-item>
                 <div
-                  class="max-h-[380px] overflow-scroll ion-padding"
+                  class="max-h-[570px] overflow-scroll ion-padding"
                   slot="content"
                 >
-                  <div class="text-center text-3xl">
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
+                  <div class="w-full text-xs text-center mt-1 mb-2">
+                    <span>Silo</span>
+                  </div>
+                  <div
+                    class="mx-auto text-3xl h-[56px] w-[56px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center"
+                  >
                     <ion-icon name="beaker-outline"></ion-icon>
                   </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
-                  </div>
-                  <div class="text-center text-3xl">
-                    <ion-icon name="beaker-outline"></ion-icon>
+                  <div class="w-full text-xs text-center my-1">
+                    <span>Silo</span>
                   </div>
                 </div>
               </ion-accordion>
             </ion-accordion-group>
+            <!-- test -->
+            <!-- <div class="absolute">
+              <ion-fab>
+                <ion-fab-button>
+                  <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-list side="start">
+                  <ion-fab-button>
+                    <ion-icon name="document"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button>
+                    <ion-icon name="color-palette"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button>
+                    <ion-icon name="globe"></ion-icon>
+                  </ion-fab-button>
+                </ion-fab-list>
+              </ion-fab>
+            </div> -->
+            <!-- ... -->
           </div>
         </div>
         <!-- curve div -->
