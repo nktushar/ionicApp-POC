@@ -24,9 +24,14 @@ import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.compon
 })
 export class DesignComponentPage implements OnInit {
   isMenuOpen = false;
+  sideMenu: boolean = false;
 
   onMenuClick() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    this.structures.forEach((structure) => {
+      structure.child = false;
+    });
   }
 
   constructor() {}
@@ -38,6 +43,26 @@ export class DesignComponentPage implements OnInit {
     { name: 'Item 2', otherProperty: 'Value 2' },
     { name: 'Item 3', otherProperty: 'Value 3' },
   ];
+
+  structures = [
+    {
+      assetId: '1',
+      child: false,
+    },
+    {
+      assetId: '2',
+      child: false,
+    },
+    {
+      assetId: '3',
+      child: false,
+    },
+    {
+      assetId: '4',
+      child: false,
+    },
+  ];
+
   selectedData: any;
   isBoxVisible = false;
 
@@ -49,5 +74,16 @@ export class DesignComponentPage implements OnInit {
   onCloseBox() {
     this.isBoxVisible = false;
     this.selectedData = null;
+  }
+  // show = false;
+
+  onAssetClick(id: string) {
+    this.structures.forEach((structure) => {
+      if (structure.assetId === id) {
+        structure.child = !structure.child;
+      } else {
+        structure.child = false;
+      }
+    });
   }
 }
