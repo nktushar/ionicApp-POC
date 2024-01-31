@@ -23,6 +23,9 @@ import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.compon
   ],
 })
 export class DesignComponentPage implements OnInit {
+  constructor() {}
+  ngOnInit() {}
+
   isMenuOpen = false;
   sideMenu: boolean = false;
 
@@ -33,10 +36,6 @@ export class DesignComponentPage implements OnInit {
       structure.child = false;
     });
   }
-
-  constructor() {}
-
-  ngOnInit() {}
 
   dataList = [
     { name: 'Item 1', otherProperty: 'Value 1' },
@@ -61,21 +60,40 @@ export class DesignComponentPage implements OnInit {
       assetId: '4',
       child: false,
     },
+    {
+      assetId: '5',
+      child: false,
+    },
+    {
+      assetId: '6',
+      child: false,
+    },
+    {
+      assetId: '7',
+      child: false,
+    },
+    {
+      assetId: '8',
+      child: false,
+    },
+    {
+      assetId: '9',
+      child: false,
+    },
   ];
 
-  selectedData: any;
-  isBoxVisible = false;
+  // selectedData: any;
+  // isBoxVisible = false;
 
-  onItemClick(item: any) {
-    this.selectedData = item;
-    this.isBoxVisible = true;
-  }
+  // onItemClick(item: any) {
+  //   this.selectedData = item;
+  //   this.isBoxVisible = true;
+  // }
 
-  onCloseBox() {
-    this.isBoxVisible = false;
-    this.selectedData = null;
-  }
-  // show = false;
+  // onCloseBox() {
+  //   this.isBoxVisible = false;
+  //   this.selectedData = null;
+  // }
 
   onAssetClick(id: string) {
     this.structures.forEach((structure) => {

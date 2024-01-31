@@ -2,7 +2,7 @@
   <div class="h-screen flex overflow-hidden bg-gray-200 relative">
     <!-- Sidebar -->
     <div
-      class="curve absolute right-0 w-24 min-h-screen transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
+      class="curve1 absolute right-0 w-24 min-h-screen transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
       [class]="!isMenuOpen ? 'translate-x-full' : ''"
     >
       <div class="h-screen flex flex-col justify-between">
@@ -15,31 +15,57 @@
             ></ion-icon>
           </div>
           <div>
-            <!-- accordion -->
-            <div class="w-auto">
+            <!-- ACCORDION -->
+            <div class="w-full">
+              <!-- SAP -->
               <div
                 class="group flex flex-col bg-white border-b-2 border-[#d6eaeb]"
                 tabindex="1"
               >
+                <!--SAP Head Icon -->
                 <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between p-2"
+                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
                 >
-                  <span> SAP </span>
+                  <ion-icon class="text-3xl" name="settings-outline"></ion-icon>
                   <ion-icon
                     class="text-xl transition-all duration-500 group-focus:-rotate-180"
                     name="chevron-down-outline"
                   ></ion-icon>
                 </div>
 
+                <!-- SAP Body -->
+                <!-- -------- -->
+              </div>
+
+              <!-- MANUAL -->
+              <div
+                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb]"
+                tabindex="2"
+              >
+                <!-- Manula Head Icon -->
                 <div
-                  class="h-auto bg-white max-h-0 items-center transition-all group-focus:max-h-[570px] overflow-scroll group-focus:duration-1000"
+                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
+                >
+                  <ion-icon class="text-3xl" name="expand-outline"></ion-icon>
+                  <ion-icon
+                    class="text-xl transition-all duration-500 group-focus:-rotate-180"
+                    name="chevron-down-outline"
+                  ></ion-icon>
+                </div>
+
+                <!-- Manual Body -->
+                <div
+                  class="bg-white max-h-0 items-center transition-all group-focus:max-h-[calc(100vh-320px)] overflow-y-scroll group-focus:duration-1000"
                 >
                   @for (structure of structures; track $index) { @if (
                   structure.child) {
+
+                  <!-- Horizontal accordion -->
                   <div
-                    class="absolute w-96 right-1 h-24 bg-white rounded-l-2xl shadow-sm z-50"
+                    class="curve2 absolute w-96 right-1 translate-y-[8px] h-[95px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-50"
                   >
-                    <div class="relative h-full w-full flex items-center">
+                    <div class="h-full w-full flex items-center">
+                      <!-- Horizontal Right Arrow button -->
                       <div
                         class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
                         (click)="onAssetClick(structure.assetId)"
@@ -49,12 +75,35 @@
                           name="chevron-forward-outline"
                         ></ion-icon>
                       </div>
+
+                      <!-- Horizontal Accordion Assets -->
+                      <div
+                        class="max-w-full max-h-full my-auto flex space-x-4 justify-end items-center mb-[10px] mr-[15px] ml-10 overflow-hidden"
+                      >
+                        @for (structure of structures; track $index) {
+                        <div>
+                          <div
+                            class="h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                          >
+                            <img
+                              class="object-cover w-full h-full"
+                              src="../../../assets/silo.png"
+                              alt="silo"
+                            />
+                          </div>
+                          <div class="w-full text-xs text-center mt-1">
+                            <span>Silo</span>
+                          </div>
+                        </div>
+                        }
+                      </div>
                     </div>
                   </div>
                   }
+                  <!-- Accordion Assets -->
                   <div (click)="onAssetClick(structure.assetId)">
                     <div
-                      class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-2 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                      class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
                     >
                       <img
                         class="object-cover w-full h-full"
@@ -70,45 +119,24 @@
                 </div>
               </div>
 
+              <!-- Excel -->
               <div
-                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb] p-2"
-                tabindex="2"
-              >
-                <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between"
-                >
-                  <span> Mat </span>
-                  <ion-icon
-                    class="text-xl transition-all duration-500 group-focus:-rotate-180"
-                    name="chevron-down-outline"
-                  ></ion-icon>
-                </div>
-                <div
-                  class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-[570px] group-focus:opacity-100 group-focus:duration-1000"
-                >
-                  Lorem ipsum dolor sit amet,
-                </div>
-              </div>
-
-              <div
-                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb] p-2"
+                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb]"
                 tabindex="3"
               >
+                <!-- Excel Head Icon -->
                 <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between"
+                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
                 >
-                  <span> VVV </span>
+                  <ion-icon class="text-3xl" name="albums-outline"></ion-icon>
                   <ion-icon
                     class="text-xl transition-all duration-500 group-focus:-rotate-180"
                     name="chevron-down-outline"
                   ></ion-icon>
                 </div>
-                <div
-                  class="invisible h-auto max-h-0 items-center text-white opacity-0 transition-all group-focus:visible group-focus:max-h-[570px] group-focus:opacity-100 group-focus:duration-1000"
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et
-                </div>
+
+                <!-- Excel Body -->
+                <!-- ---------- -->
               </div>
             </div>
             <!--// component -->
@@ -176,7 +204,7 @@
           </div>
 
           <!-- Click item box show -->
-          <div class="w-24 mx-auto mb-10">
+          <!-- <div class="w-24 mx-auto mb-10">
             <ul class="bg-gray-400 rounded-lg p-2">
               <li
                 class="cursor-pointer"
@@ -196,7 +224,7 @@
                 Close
               </button>
             </div>
-          </div>
+          </div> -->
           <!-- -------------  -->
 
           <!-- CARDS -->

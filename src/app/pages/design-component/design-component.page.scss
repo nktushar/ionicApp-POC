@@ -16,13 +16,24 @@
   position: relative;
 }
 
-.curve {
+.curve1 {
   background: radial-gradient(
     85% 80px at left calc(100% - 73px),
     transparent 50%,
     white 0%
   );
 }
+.curve2 {
+  background: radial-gradient(
+    11% 42px at left calc(100% - 47px),
+    transparent 50%,
+    rgb(255, 255, 255) 0%
+  );
+}
+
+// .scroll {
+//   overflow-x: scroll !important;
+// }
 
 // ion-accordion.accordion-expanding ion-item[slot="header"],
 // ion-accordion.accordion-expanded ion-item[slot="header"] {
