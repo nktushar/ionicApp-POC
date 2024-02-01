@@ -54,9 +54,11 @@
                 </div>
 
                 <!-- Manual Body -->
-                <div class="">
+                <div
+                  class="w-24 h-24 bg-transparent overflow-y-scroll absolute right-0"
+                >
                   <div
-                    class="bg-white max-h-0 transition-all group-focus:max-h-[calc(100vh-320px)] group-focus:duration-1000 overflow-x-visible overflow-y-scroll"
+                    class="bg-white max-h-0 transition-all group-focus:max-h-[calc(100vh-320px)] group-focus:duration-1000 overflow-x-visible overflow-y-scroll relative"
                   >
                     @for (structure of structures; track $index) { @if (
                     structure.child) {
@@ -236,7 +238,7 @@
           <!-- CARDS -->
 
           <div
-            class="w-[500px] h-24 bg-gray-300 flex justify-end ml-40 relative overflow-y-scroll"
+            class="w-[500px] h-24 bg-gray-300 flex justify-end ml-40 overflow-y-scroll"
           >
             <div class="h-24 w-96 bg-teal-300 relative p-3">
               <div

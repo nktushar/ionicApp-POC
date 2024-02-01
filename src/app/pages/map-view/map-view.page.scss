@@ -1,0 +1,42 @@
+.bubble {
+  height: 34px;
+  width: 34px;
+  border-radius: 2px;
+  text-align: center;
+  display: flex;
+}
+
+.pointer {
+  height: 8px;
+  width: 8px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-radius: 0 0 2px 0;
+  margin-top: -4.6px;
+  position: relative;
+}
+
+.curve1 {
+  background: radial-gradient(
+    85% 80px at left calc(100% - 73px),
+    transparent 50%,
+    rgb(255, 255, 255) 0%
+  );
+}
+.curve2 {
+  background: radial-gradient(
+    11% 42px at left calc(100% - 47px),
+    transparent 50%,
+    rgb(255, 255, 255) 0%
+  );
+}
+
+// .scroll {
+//   overflow-x: scroll !important;
+// }
+
+// ion-accordion.accordion-expanding ion-item[slot="header"],
+// ion-accordion.accordion-expanded ion-item[slot="header"] {
+//   --background: var(--ion-color-primary);
+//   --color: var(--ion-color-primary-contrast);
+// }

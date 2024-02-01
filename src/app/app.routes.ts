@@ -34,6 +34,10 @@ export const routes: Routes = [
     path: 'design-component',
     loadComponent: () => import('./pages/design-component/design-component.page').then( m => m.DesignComponentPage)
   },
+  {
+    path: 'map-view',
+    loadComponent: () => import('./pages/map-view/map-view.page').then( m => m.MapViewPage)
+  },
 
 
 ];
