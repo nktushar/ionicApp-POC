@@ -15,6 +15,16 @@ export class MapViewPage implements OnInit {
   ngOnInit() {}
 
   isMenuOpen = false;
+  activeAccordion: string = '';
+  toggleVisibility(buttonId: string) {
+    if (this.activeAccordion === buttonId) {
+      // If the same button is clicked again, hide the div
+      this.activeAccordion = '';
+    } else {
+      // If a different button is clicked, show its corresponding div
+      this.activeAccordion = buttonId;
+    }
+  }
 
   menuToggle() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -22,6 +32,7 @@ export class MapViewPage implements OnInit {
     this.structures.forEach((structure) => {
       structure.child = false;
     });
+    this.activeAccordion = '';
   }
 
   structures = [

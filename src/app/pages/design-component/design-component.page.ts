@@ -6,6 +6,7 @@ import { FindingCardComponent } from 'src/app/components/finding-card/finding-ca
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-design-component',
@@ -24,7 +25,9 @@ import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.compon
 })
 export class DesignComponentPage implements OnInit {
   constructor() {}
-  ngOnInit() {}
+  ngOnInit() {
+    initFlowbite();
+  }
 
   isMenuOpen = false;
   sideMenu: boolean = false;

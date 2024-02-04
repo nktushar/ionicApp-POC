@@ -55,75 +55,75 @@
 
                 <!-- Manual Body -->
                 <div
-                  class="w-24 h-24 bg-transparent overflow-y-scroll absolute right-0"
+                  class="bg-white max-h-0 transition-all group-focus:max-h-[calc(100vh-320px)] group-focus:duration-1000 overflow-y-scroll overflow-x-visible"
                 >
+                  @for (structure of structures; track $index) { @if (
+                  structure.child) {
+
+                  <!-- Horizontal accordion -->
                   <div
-                    class="bg-white max-h-0 transition-all group-focus:max-h-[calc(100vh-320px)] group-focus:duration-1000 overflow-x-visible overflow-y-scroll relative"
+                    class="curve2 relative w-96 right-full translate-y-[8px] h-[95px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30 overflow-x-visible"
                   >
-                    @for (structure of structures; track $index) { @if (
-                    structure.child) {
-                    <!-- Horizontal accordion -->
-                    <div
-                      class="curve2 absolute w-96 right-1 translate-y-[8px] h-[95px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30 overflow-x-visible"
-                    >
-                      <div class="h-full w-full flex items-center">
-                        <!-- Horizontal Right Arrow button -->
-                        <div
-                          class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
-                          (click)="onAssetClick(structure.assetId)"
-                        >
-                          <ion-icon
-                            class="text-white text-2xl"
-                            name="chevron-forward-outline"
-                          ></ion-icon>
-                        </div>
-                        <!-- Horizontal Accordion Assets -->
-                        <div
-                          class="max-w-full max-h-full my-auto flex space-x-4 justify-end items-center mb-[10px] mr-[15px] ml-10 overflow-hidden"
-                        >
-                          @for (structure of structures; track $index) {
-                          <div>
-                            <div
-                              class="h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
-                            >
-                              <img
-                                class="object-cover w-full h-full"
-                                src="../../../assets/silo.png"
-                                alt="silo"
-                              />
-                            </div>
-                            <div class="w-full text-xs text-center mt-1">
-                              <span>Silo</span>
-                            </div>
-                          </div>
-                          }
-                        </div>
-                      </div>
-                    </div>
-                    }
-                    <!-- Accordion Assets -->
-                    <div (click)="onAssetClick(structure.assetId)">
+                    <div class="h-full w-full flex items-center">
+                      <!-- Horizontal Right Arrow button -->
                       <div
-                        class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                        class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
+                        (click)="onAssetClick(structure.assetId)"
                       >
-                        <img
-                          class="object-cover w-full h-full"
-                          src="../../../assets/silo.png"
-                          alt="silo"
-                        />
+                        <ion-icon
+                          class="text-white text-2xl"
+                          name="chevron-forward-outline"
+                        ></ion-icon>
                       </div>
-                      <div class="w-full text-xs text-center mt-1">
-                        <span>Silo</span>
+
+                      <!-- Horizontal Accordion Assets -->
+                      <div
+                        class="max-w-full max-h-full my-auto flex space-x-4 justify-end items-center mb-[10px] mr-[15px] ml-10 overflow-hidden"
+                      >
+                        @for (structure of structures; track $index) {
+                        <div>
+                          <div
+                            class="h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                          >
+                            <img
+                              class="object-cover w-full h-full"
+                              src="../../../assets/silo.png"
+                              alt="silo"
+                            />
+                          </div>
+                          <div class="w-full text-xs text-center mt-1">
+                            <span>Silo</span>
+                          </div>
+                        </div>
+                        }
                       </div>
                     </div>
-                    }
-                    <!-- <div class="-translate-x-10 flex overflow-x-visible z-50">
-                      <span>dhkjsdlkfjosdjf</span>
-                      <span>dhkjsdlkfjosdjf</span>
-                      <span>dhkjsdlkfjosdjf</span>
-                      <span>dhkjsdlkfjosdjf</span>
-                    </div> -->
                   </div>
+                  }
+                  <!-- Accordion Assets -->
+
+                  <div (click)="onAssetClick(structure.assetId)">
+                    <div
+                      class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
+                    >
+                      <img
+                        class="object-cover w-full h-full"
+                        src="../../../assets/silo.png"
+                        alt="silo"
+                      />
+                    </div>
+                    <div class="w-full text-xs text-center mt-1">
+                      <span>Silo</span>
+                    </div>
+                  </div>
+
+                  }
+                  <!-- <div class="-translate-x-10 flex overflow-x-visible z-50">
+                    <span>dhkjsdlkfjosdjf</span>
+                    <span>dhkjsdlkfjosdjf</span>
+                    <span>dhkjsdlkfjosdjf</span>
+                    <span>dhkjsdlkfjosdjf</span>
+                  </div> -->
                 </div>
               </div>
 
@@ -168,6 +168,8 @@
       <!-- Content Body -->
       <div class="flex-1 overflow-auto p-4">
         <div class="max-w-6xl h-auto mx-auto">
+          <!-- popover -->
+
           <!-- Progress Bar -->
           <!-- <div class="flex pt-4 mb-5 items-center">
             <div class="">
@@ -237,8 +239,8 @@
 
           <!-- CARDS -->
 
-          <div
-            class="w-[500px] h-24 bg-gray-300 flex justify-end ml-40 overflow-y-scroll"
+          <!-- <div
+            class="w-[500px] h-24 bg-gray-300 flex justify-end ml-40 relative overflow-y-scroll"
           >
             <div class="h-24 w-96 bg-teal-300 relative p-3">
               <div
@@ -256,7 +258,7 @@
               <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
               <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
             </div>
-          </div>
+          </div> -->
           <!-- ------------- -->
 
           <!-- Assessment Card -->
