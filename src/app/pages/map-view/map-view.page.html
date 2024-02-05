@@ -12,15 +12,26 @@
           name="close-outline"
         ></ion-icon>
       </div>
-      <!-- ACCORDION -->
+      <!-- MANUAL ACCORDION -->
+
+      <!-- Manula Head Icon -->
       <div
         (click)="toggleVisibility('manual')"
-        class="w-full h-16 bg-green-500"
-      ></div>
+        class="flex cursor-pointer w-full items-center justify-between px-3 py-2 duration-300"
+        [class]="activeAccordion=='manual' ? 'bg-[#3cb4aa] text-white ' : 'bg-[#edf5f5] text-[#0b7987] '"
+      >
+        <ion-icon class="text-3xl" name="expand-outline"></ion-icon>
+        <ion-icon
+          class="text-xl transition-all duration-200"
+          name="chevron-down-outline"
+          [class]="activeAccordion=='manual' ? 'rotate-180' : ''"
+        ></ion-icon>
+      </div>
 
+      <!-- Manual Body -->
       <div
-        class="w-[370px] sm:w-[450px] bg-red-500 relative right-0 flex flex-col items-end overflow-y-scroll"
-        [class]="activeAccordion=='manual' ? ' max-h-96 ease-in-out duration-300' : 'max-h-0'"
+        class="w-[370px] sm:w-[450px] bg-red-500 relative right-0 flex flex-col items-end overflow-y-scroll duration-300"
+        [class]="activeAccordion=='manual' ? ' max-h-96 ease-in-out ' : 'max-h-0'"
       >
         @for (structure of structures; track $index) {
         <div class="relative">
