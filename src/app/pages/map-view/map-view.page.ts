@@ -16,6 +16,7 @@ export class MapViewPage implements OnInit {
 
   isMenuOpen = false;
   activeAccordion: string = '';
+
   toggleVisibility(buttonId: string) {
     if (this.activeAccordion === buttonId) {
       // If the same button is clicked again, hide the div
@@ -24,6 +25,9 @@ export class MapViewPage implements OnInit {
       // If a different button is clicked, show its corresponding div
       this.activeAccordion = buttonId;
     }
+    this.structures.forEach((structure) => {
+      structure.child = false;
+    });
   }
 
   menuToggle() {
