@@ -5,7 +5,6 @@ import { IonicModule } from '@ionic/angular';
 import { FindingCardComponent } from 'src/app/components/finding-card/finding-card.component';
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
-import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 import { initFlowbite } from 'flowbite';
 
 @Component({
@@ -20,91 +19,11 @@ import { initFlowbite } from 'flowbite';
     FindingCardComponent,
     ActionCardComponent,
     AssessmentCardComponent,
-    SideMenuComponent,
   ],
 })
 export class DesignComponentPage implements OnInit {
   constructor() {}
   ngOnInit() {
     initFlowbite();
-  }
-
-  isMenuOpen = false;
-  sideMenu: boolean = false;
-
-  onMenuClick() {
-    this.isMenuOpen = !this.isMenuOpen;
-
-    this.structures.forEach((structure) => {
-      structure.child = false;
-    });
-  }
-
-  dataList = [
-    { name: 'Item 1', otherProperty: 'Value 1' },
-    { name: 'Item 2', otherProperty: 'Value 2' },
-    { name: 'Item 3', otherProperty: 'Value 3' },
-  ];
-
-  structures = [
-    {
-      assetId: '1',
-      child: false,
-    },
-    {
-      assetId: '2',
-      child: false,
-    },
-    {
-      assetId: '3',
-      child: false,
-    },
-    {
-      assetId: '4',
-      child: false,
-    },
-    {
-      assetId: '5',
-      child: false,
-    },
-    {
-      assetId: '6',
-      child: false,
-    },
-    {
-      assetId: '7',
-      child: false,
-    },
-    {
-      assetId: '8',
-      child: false,
-    },
-    {
-      assetId: '9',
-      child: false,
-    },
-  ];
-
-  // selectedData: any;
-  // isBoxVisible = false;
-
-  // onItemClick(item: any) {
-  //   this.selectedData = item;
-  //   this.isBoxVisible = true;
-  // }
-
-  // onCloseBox() {
-  //   this.isBoxVisible = false;
-  //   this.selectedData = null;
-  // }
-
-  onAssetClick(id: string) {
-    this.structures.forEach((structure) => {
-      if (structure.assetId === id) {
-        structure.child = !structure.child;
-      } else {
-        structure.child = false;
-      }
-    });
   }
 }
