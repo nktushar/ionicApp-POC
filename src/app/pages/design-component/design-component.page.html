@@ -1,161 +1,5 @@
 <ion-content>
   <div class="h-screen w-full flex overflow-hidden bg-gray-200">
-    <!-- Sidebar -->
-    <div
-      class="curve1 absolute right-0 w-24 min-h-screen transition-transform transform ease-out duration-300 rounded-l-3xl shadow-3xl z-10"
-      [class]="!isMenuOpen ? 'translate-x-full' : ''"
-    >
-      <div class="h-screen flex flex-col justify-between">
-        <!-- Sidebar Content -->
-        <div>
-          <div class="cursor-pointer my-2 text-right" (click)="onMenuClick()">
-            <ion-icon
-              class="text-3xl font-bold mx-2"
-              name="close-outline"
-            ></ion-icon>
-          </div>
-          <div>
-            <!-- ACCORDION -->
-            <div class="w-full">
-              <!-- SAP -->
-              <div
-                class="group flex flex-col bg-white border-b-2 border-[#d6eaeb]"
-                tabindex="1"
-              >
-                <!--SAP Head Icon -->
-                <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
-                >
-                  <ion-icon class="text-3xl" name="settings-outline"></ion-icon>
-                  <ion-icon
-                    class="text-xl transition-all duration-500 group-focus:-rotate-180"
-                    name="chevron-down-outline"
-                  ></ion-icon>
-                </div>
-
-                <!-- SAP Body -->
-                <!-- -------- -->
-              </div>
-
-              <!-- MANUAL -->
-              <div
-                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb]"
-                tabindex="2"
-              >
-                <!-- Manula Head Icon -->
-                <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
-                >
-                  <ion-icon class="text-3xl" name="expand-outline"></ion-icon>
-                  <ion-icon
-                    class="text-xl transition-all duration-500 group-focus:-rotate-180"
-                    name="chevron-down-outline"
-                  ></ion-icon>
-                </div>
-
-                <!-- Manual Body -->
-                <div
-                  class="bg-white max-h-0 transition-all group-focus:max-h-[calc(100vh-320px)] group-focus:duration-1000 overflow-y-scroll overflow-x-visible"
-                >
-                  @for (structure of structures; track $index) { @if (
-                  structure.child) {
-
-                  <!-- Horizontal accordion -->
-                  <div
-                    class="curve2 relative w-96 right-full translate-y-[8px] h-[95px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30 overflow-x-visible"
-                  >
-                    <div class="h-full w-full flex items-center">
-                      <!-- Horizontal Right Arrow button -->
-                      <div
-                        class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
-                        (click)="onAssetClick(structure.assetId)"
-                      >
-                        <ion-icon
-                          class="text-white text-2xl"
-                          name="chevron-forward-outline"
-                        ></ion-icon>
-                      </div>
-
-                      <!-- Horizontal Accordion Assets -->
-                      <div
-                        class="max-w-full max-h-full my-auto flex space-x-4 justify-end items-center mb-[10px] mr-[15px] ml-10 overflow-hidden"
-                      >
-                        @for (structure of structures; track $index) {
-                        <div>
-                          <div
-                            class="h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
-                          >
-                            <img
-                              class="object-cover w-full h-full"
-                              src="../../../assets/silo.png"
-                              alt="silo"
-                            />
-                          </div>
-                          <div class="w-full text-xs text-center mt-1">
-                            <span>Silo</span>
-                          </div>
-                        </div>
-                        }
-                      </div>
-                    </div>
-                  </div>
-                  }
-                  <!-- Accordion Assets -->
-
-                  <div (click)="onAssetClick(structure.assetId)">
-                    <div
-                      class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#d6eaeb] rounded-md flex justify-center items-center overflow-hidden"
-                    >
-                      <img
-                        class="object-cover w-full h-full"
-                        src="../../../assets/silo.png"
-                        alt="silo"
-                      />
-                    </div>
-                    <div class="w-full text-xs text-center mt-1">
-                      <span>Silo</span>
-                    </div>
-                  </div>
-
-                  }
-                  <!-- <div class="-translate-x-10 flex overflow-x-visible z-50">
-                    <span>dhkjsdlkfjosdjf</span>
-                    <span>dhkjsdlkfjosdjf</span>
-                    <span>dhkjsdlkfjosdjf</span>
-                    <span>dhkjsdlkfjosdjf</span>
-                  </div> -->
-                </div>
-              </div>
-
-              <!-- Excel -->
-              <div
-                class="group flex flex-col bg-[#f5feff] border-b-2 border-[#d6eaeb]"
-                tabindex="3"
-              >
-                <!-- Excel Head Icon -->
-                <div
-                  class="flex cursor-pointer bg-[#f5feff] text-[#0b7987] items-center justify-between px-3 py-2"
-                >
-                  <ion-icon class="text-3xl" name="albums-outline"></ion-icon>
-                  <ion-icon
-                    class="text-xl transition-all duration-500 group-focus:-rotate-180"
-                    name="chevron-down-outline"
-                  ></ion-icon>
-                </div>
-
-                <!-- Excel Body -->
-                <!-- ---------- -->
-              </div>
-            </div>
-            <!--// component -->
-          </div>
-        </div>
-        <!-- curve div -->
-        <!-- <div class="w-10 h-20 bg-gray-200 mb-[33px] rounded-r-[200px]"></div> -->
-      </div>
-    </div>
-
-    <!-- Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Navbar -->
       <div class="bg-[#1a818f] text-white shadow">
@@ -168,10 +12,8 @@
       <!-- Content Body -->
       <div class="flex-1 overflow-auto p-4">
         <div class="max-w-6xl h-auto mx-auto">
-          <!-- popover -->
-
           <!-- Progress Bar -->
-          <!-- <div class="flex pt-4 mb-5 items-center">
+          <div class="flex pt-4 mb-5 items-center">
             <div class="">
               <div class="bubble bg-[#007382] text-white">
                 <ion-icon
@@ -211,75 +53,19 @@
                 <div class="pointer bg-[#d6eaeb]"></div>
               </div>
             </div>
-          </div> -->
+          </div>
 
-          <!-- Click item box show -->
-          <!-- <div class="w-24 mx-auto mb-10">
-            <ul class="bg-gray-400 rounded-lg p-2">
-              <li
-                class="cursor-pointer"
-                *ngFor="let item of dataList"
-                (click)="onItemClick(item)"
-              >
-                {{ item.name }}
-              </li>
-            </ul>
-
-            <div *ngIf="isBoxVisible" class="data-box bg-yellow-200">
-              <p>{{ selectedData.name }}</p>
-              <button
-                class="bg-blue-500 text-white px-2 rounded-sm"
-                (click)="onCloseBox()"
-              >
-                Close
-              </button>
-            </div>
-          </div> -->
-          <!-- -------------  -->
-
-          <!-- CARDS -->
-
-          <!-- <div
-            class="w-[500px] h-24 bg-gray-300 flex justify-end ml-40 relative overflow-y-scroll"
-          >
-            <div class="h-24 w-96 bg-teal-300 relative p-3">
-              <div
-                class="h-8 w-8 bg-fuchsia-500 border-2 border-black -ml-200 absolute -left-2"
-              ></div>
-              <div
-                class="h-8 w-8 bg-fuchsia-500 border-2 border-black mt-10"
-              ></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-              <div class="h-8 w-8 bg-fuchsia-500 border-2 border-black"></div>
-            </div>
-          </div> -->
-          <!-- ------------- -->
+          <!-- Cards -->
 
           <!-- Assessment Card -->
-          <!-- <app-assessment-card [isOverdue]="false"></app-assessment-card> -->
+          <app-assessment-card [isOverdue]="false"></app-assessment-card>
 
           <!-- Action Card -->
-          <!-- <app-action-card [isOverdue]="false"></app-action-card> -->
+          <app-action-card [isOverdue]="false"></app-action-card>s
 
           <!-- Finding Card -->
-          <!-- <app-finding-card [isOverdue]="false"></app-finding-card> -->
+          <app-finding-card [isOverdue]="false"></app-finding-card>
         </div>
-
-        <button
-          class="fixed bottom-[35px] right-16 z-20"
-          (click)="onMenuClick()"
-        >
-          <ion-icon
-            class="bg-[#007382] text-white text-3xl p-3 rounded-full"
-            [name]="isMenuOpen ? 'save-outline' : 'brush-outline'"
-          ></ion-icon>
-        </button>
       </div>
     </div>
   </div>
