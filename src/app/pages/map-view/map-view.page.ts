@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-map-view',
   templateUrl: './map-view.page.html',
   styleUrls: ['./map-view.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, SideMenuComponent],
+  imports: [IonicModule, CommonModule, SideMenuComponent, CdkDrag],
 })
 export class MapViewPage implements OnInit {
   constructor() {}
