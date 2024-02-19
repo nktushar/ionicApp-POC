@@ -24,7 +24,7 @@ import { BottomModalComponent } from 'src/app/components/bottom-modal/bottom-mod
 })
 export class DesignComponentPage implements OnInit {
   // @Output() isMenuToggleOpen = new EventEmitter<boolean>(false);
-  isMenuOpen: boolean = true;
+  isMenuOpen: boolean = false;
   constructor() {}
   ngOnInit() {}
   handleMenuToggle = () => {
