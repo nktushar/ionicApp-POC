@@ -9,8 +9,10 @@
           </div>
         </div>
       </div>
+
       <!-- Content Body -->
-      <div class="p-4">
+      <app-bottom-modal [isMenuOpen]="isMenuOpen"></app-bottom-modal>
+      <div class="overflow-auto p-4">
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
           <div class="flex pt-4 mb-5 items-center">
@@ -54,8 +56,12 @@
               </div>
             </div>
           </div>
+          <!-- ------- -->
 
-          <!-- Cards -->
+          <!-- bottom modal -->
+          <!-- <button class="bg-red-700" (click)="handleMenuToggle()">
+            Bottom Modal
+          </button> -->
 
           <!-- Assessment Card -->
           <app-assessment-card [isOverdue]="false"></app-assessment-card>
