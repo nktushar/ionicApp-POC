@@ -1,19 +1,14 @@
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Start off-screen */
-  width: 280px;
-  height: 100%;
-  background-color: #e21a1a;
-  color: white;
-  padding: 20px;
-  transition: left 0.3s ease;
+.curve1 {
+  background: radial-gradient(
+    85% 80px at left calc(100% - 73px),
+    transparent 50%,
+    rgb(255, 255, 255) 0%
+  );
 }
-
-.side-menu button {
-  background-color: #555;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+.curve2 {
+  background: radial-gradient(
+    42px 42px at left calc(100% - 47px),
+    transparent 50%,
+    rgb(255, 255, 255) 0%
+  );
 }

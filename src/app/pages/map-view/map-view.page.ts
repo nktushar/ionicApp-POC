@@ -79,10 +79,14 @@ export class MapViewPage implements OnInit {
     },
   ];
 
+  isChildOpen = false;
+
   onAssetClick(id: string) {
     this.structures.forEach((structure) => {
       if (structure.assetId === id) {
         structure.child = !structure.child;
+        this.isChildOpen = structure.child;
+        console.log(this.isChildOpen);
       } else {
         structure.child = false;
       }

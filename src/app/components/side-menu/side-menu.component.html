@@ -1,4 +1,282 @@
-<div class="side-menu">
-  <button (click)="onCloseClick()">Close</button>
-  <!-- Add your menu items here -->
+<div
+  class="curve1 absolute flex flex-col items-end right-0 w-24 min-h-screen duration-300 rounded-l-3xl shadow-3xl z-10"
+  [class]="!isMenuOpen ? 'translate-x-full' : ''"
+>
+  <!-- Close button -->
+  <div class="cursor-pointer my-2 text-right" (click)="menuToggle()">
+    <ion-icon class="text-3xl font-bold mx-2" name="close-outline"></ion-icon>
+  </div>
+
+  <!-- SAP ACCORDION -->
+
+  <!-- SAP Head Icon -->
+  <div
+    (click)="toggleVisibility('sap')"
+    class="flex cursor-pointer w-full items-center justify-between px-3 py-2 duration-300"
+    [class]="
+      activeAccordion == 'sap'
+        ? 'bg-[#3CB4AA] text-white border-b-2 border-[#3CB4AA]'
+        : 'bg-[#edf5f5] text-[#007382] border-b-2 border-[#00738233]'
+    "
+  >
+    <ion-icon class="text-3xl" name="settings-outline"></ion-icon>
+    <ion-icon
+      class="text-xl transition-all duration-200"
+      name="chevron-down-outline"
+      [class]="activeAccordion == 'sap' ? 'rotate-180' : ''"
+    ></ion-icon>
+  </div>
+
+  <!-- SAP Body -->
+  <div
+    class="w-[370px] sm:w-[450px] bg-orange-500 relative right-0 flex flex-col items-end overflow-y-scroll duration-300"
+    [class]="
+      activeAccordion == 'sap' ? ' max-h-[calc(100vh-320px)]  ' : 'max-h-0'
+    "
+  >
+    @for (structure of structures; track $index) {
+      <div class="relative">
+        <div
+          (click)="onAssetClick(structure.assetId)"
+          class="cursor-pointer mr-[15px] mb-3"
+        >
+          <div
+            class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+          >
+            <img
+              class="object-cover w-full h-full"
+              src="../../../assets/silo.png"
+              alt="silo"
+            />
+          </div>
+          <div class="w-full text-xs text-center mt-1">
+            <span class="text-[#000000DE]">Silo</span>
+          </div>
+        </div>
+        @if (structure.child) {
+          <!-- Horizontal accordion -->
+          <div
+            class="curve2 absolute top-[2px] h-[94px] max-w-[344px] sm:max-w-[419px] right-0 translate-y-[8px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30"
+          >
+            <div class="h-full w-full flex items-center">
+              <!-- Horizontal Right Arrow button -->
+              <div
+                class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
+                (click)="onAssetClick(structure.assetId)"
+              >
+                <ion-icon
+                  class="text-white text-2xl"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+
+              <!-- Horizontal Accordion Assets -->
+              <div
+                class="max-w-full max-h-full my-auto flex space-x-4 items-center mb-[10px] mr-[15px] ml-10 overflow-x-scroll overflow-y-hidden"
+              >
+                @for (structure of structures; track $index) {
+                  <div class="cursor-pointer">
+                    <div
+                      class="h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+                    >
+                      <img
+                        class="object-cover w-full h-full"
+                        src="../../../assets/silo.png"
+                        alt="silo"
+                      />
+                    </div>
+                    <div class="w-full text-xs text-center mt-1">
+                      <span class="text-[#000000DE]">Silo</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- MANUAL ACCORDION -->
+
+  <!-- Manula Head Icon -->
+  <div
+    (click)="toggleVisibility('manual')"
+    class="flex cursor-pointer w-full items-center justify-between px-3 py-2 duration-300"
+    [class]="
+      activeAccordion == 'manual'
+        ? 'bg-[#3CB4AA] text-white border-b-2 border-[#3CB4AA]'
+        : 'bg-[#EDF5F5] text-[#007382] border-b-2 border-[#00738233]'
+    "
+  >
+    <ion-icon class="text-3xl" name="expand-outline"></ion-icon>
+    <ion-icon
+      class="text-xl transition-all duration-200"
+      name="chevron-down-outline"
+      [class]="activeAccordion == 'manual' ? 'rotate-180' : ''"
+    ></ion-icon>
+  </div>
+
+  <!-- Manual Body -->
+  <div
+    class="w-[370px] sm:w-[450px] bg-transparent relative right-0 flex flex-col items-end overflow-y-scroll duration-300"
+    [class]="
+      activeAccordion == 'manual' ? ' max-h-[calc(100vh-320px)]  ' : 'max-h-0'
+    "
+  >
+    @for (structure of structures; track $index) {
+      <div class="relative">
+        <div
+          (click)="onAssetClick(structure.assetId)"
+          class="cursor-pointer mr-[15px] mb-3"
+        >
+          <div
+            class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+          >
+            <img
+              class="object-cover w-full h-full"
+              src="../../../assets/silo.png"
+              alt="silo"
+            />
+          </div>
+          <div class="w-full text-xs text-center mt-1">
+            <span class="text-[#000000DE]">Silo</span>
+          </div>
+        </div>
+        @if (structure.child) {
+          <!-- Horizontal accordion -->
+          <div
+            class="curve2 absolute top-[2px] h-[94px] max-w-[344px] sm:max-w-[419px] right-0 translate-y-[8px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30"
+          >
+            <div class="h-full w-full flex items-center">
+              <!-- Horizontal Right Arrow button -->
+              <div
+                class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
+                (click)="onAssetClick(structure.assetId)"
+              >
+                <ion-icon
+                  class="text-white text-2xl"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+
+              <!-- Horizontal Accordion Assets -->
+              <div
+                class="max-w-full max-h-full my-auto flex space-x-4 items-center mb-[10px] mr-[15px] ml-10 overflow-x-scroll overflow-y-hidden"
+              >
+                @for (structure of structures; track $index) {
+                  <div class="cursor-pointer">
+                    <div
+                      class="h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+                    >
+                      <img
+                        class="object-cover w-full h-full"
+                        src="../../../assets/silo.png"
+                        alt="silo"
+                      />
+                    </div>
+                    <div class="w-full text-xs text-center mt-1">
+                      <span class="text-[#000000DE]">Silo</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- EXCEL ACCORDION -->
+
+  <!-- Excel Head Icon -->
+  <div
+    (click)="toggleVisibility('excel')"
+    class="flex cursor-pointer w-full items-center justify-between px-3 py-2 duration-300"
+    [class]="
+      activeAccordion == 'excel'
+        ? 'bg-[#3CB4AA] text-white '
+        : 'bg-[#EDF5F5] text-[#007382] '
+    "
+  >
+    <ion-icon class="text-3xl" name="albums-outline"></ion-icon>
+    <ion-icon
+      class="text-xl transition-all duration-200"
+      name="chevron-down-outline"
+      [class]="activeAccordion == 'excel' ? 'rotate-180' : ''"
+    ></ion-icon>
+  </div>
+
+  <!-- Excel Body -->
+  <div
+    class="w-[370px] sm:w-[450px] bg-transparent relative right-0 flex flex-col items-end overflow-y-scroll duration-300"
+    [class]="
+      activeAccordion == 'excel' ? ' max-h-[calc(100vh-320px)]  ' : 'max-h-0'
+    "
+  >
+    @for (structure of structures; track $index) {
+      <div class="relative">
+        <div
+          (click)="onAssetClick(structure.assetId)"
+          class="cursor-pointer mr-[15px] mb-3"
+        >
+          <div
+            class="mx-auto mt-3 text-3xl h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+          >
+            <img
+              class="object-cover w-full h-full"
+              src="../../../assets/silo.png"
+              alt="silo"
+            />
+          </div>
+          <div class="w-full text-xs text-center mt-1">
+            <span class="text-[#000000DE]">Silo</span>
+          </div>
+        </div>
+        @if (structure.child) {
+          <!-- Horizontal accordion -->
+          <div
+            class="curve2 absolute top-[2px] h-[94px] max-w-[344px] sm:max-w-[419px] right-0 translate-y-[8px] rounded-l-2xl shadow-[-7px_0px_8px_0px_#e2e8f0] z-30"
+          >
+            <div class="h-full w-full flex items-center">
+              <!-- Horizontal Right Arrow button -->
+              <div
+                class="absolute w-8 h-8 bg-black rounded-full -translate-x-4 flex items-center justify-center cursor-pointer"
+                (click)="onAssetClick(structure.assetId)"
+              >
+                <ion-icon
+                  class="text-white text-2xl"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+
+              <!-- Horizontal Accordion Assets -->
+              <div
+                class="max-w-full max-h-full my-auto flex space-x-4 items-center mb-[10px] mr-[15px] ml-10 overflow-x-scroll overflow-y-hidden"
+              >
+                @for (structure of structures; track $index) {
+                  <div class="cursor-pointer">
+                    <div
+                      class="h-[60px] w-[60px] border-1 border-[#D6EAEB] rounded-md flex justify-center items-center overflow-hidden"
+                    >
+                      <img
+                        class="object-cover w-full h-full"
+                        src="../../../assets/silo.png"
+                        alt="silo"
+                      />
+                    </div>
+                    <div class="w-full text-xs text-center mt-1">
+                      <span class="text-[#000000DE]">Silo</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
 </div>
