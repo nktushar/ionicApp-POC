@@ -6,6 +6,7 @@ import { FindingCardComponent } from 'src/app/components/finding-card/finding-ca
 import { ActionCardComponent } from 'src/app/components/action-card/action-card.component';
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 import { BottomModalComponent } from 'src/app/components/bottom-modal/bottom-modal.component';
+import { ActionMgmtSuccessModalComponent } from 'src/app/components/action-mgmt-success-modal/action-mgmt-success-modal.component';
 
 @Component({
   selector: 'app-design-component',
@@ -20,13 +21,18 @@ import { BottomModalComponent } from 'src/app/components/bottom-modal/bottom-mod
     ActionCardComponent,
     AssessmentCardComponent,
     BottomModalComponent,
+    ActionMgmtSuccessModalComponent,
   ],
 })
 export class DesignComponentPage implements OnInit {
   isMenuOpen: boolean = false;
+  isActionMgmtSuccessModalOpen: boolean = false;
   constructor() {}
   ngOnInit() {}
   assessmentModalToggle = () => {
     this.isMenuOpen = !this.isMenuOpen;
+  };
+  actionMgmtModalToggle = () => {
+    this.isActionMgmtSuccessModalOpen = !this.isActionMgmtSuccessModalOpen;
   };
 }

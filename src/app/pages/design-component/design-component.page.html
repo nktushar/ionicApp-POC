@@ -14,6 +14,9 @@
       <div class="overflow-auto">
         <!-- Assessment Success Modal -->
         <app-bottom-modal [isMenuOpen]="isMenuOpen"></app-bottom-modal>
+        <app-action-mgmt-success-modal
+          [isMenuOpen]="isActionMgmtSuccessModalOpen"
+        ></app-action-mgmt-success-modal>
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
           <div class="flex pt-4 mx-4 mb-5 items-center">
@@ -64,7 +67,13 @@
             class="bg-red-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
             (click)="assessmentModalToggle()"
           >
-            Bottom Modal
+            Assessment Success Modal
+          </button>
+          <button
+            class="bg-green-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
+            (click)="actionMgmtModalToggle()"
+          >
+            Action Mgmt Success Modal
           </button>
 
           <!-- Assessment Card -->

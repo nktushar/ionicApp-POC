@@ -1,6 +1,6 @@
 import { IonicModule } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-bottom-modal',
