@@ -1,14 +1,14 @@
 <div
-  class="custom curve fixed w-full bottom-0 h-2/4 rounded-lg shadow bg-white-800 transform transition-transform duration-800 z-50"
-  [class]="!isMenuOpen ? 'translate-y-[calc(100%+25px)]' : ''"
+  class="fixed w-full bottom-0 h-2/4 rounded-[32px] shadow-lg bg-transparent transform transition-transform duration-800 z-50"
+  [class]="!isMenuOpen ? 'translate-y-[calc(100%+40px)]' : ''"
 >
   <div class="h-full w-full flex">
-    <div class="h-full w-[calc(100%-80px)] bg-white rounded-tl-[32px]"></div>
+    <div class="h-full w-[calc(100%-125px)] bg-white rounded-tl-[32px]"></div>
     <div class="">
       <svg
-        height="25"
+        height="42"
         viewBox="0 0 100 50"
-        width="50"
+        width="82"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -19,10 +19,10 @@
       </svg>
       <div class="w-auto h-full bg-white relative">
         <div
-          class="absolute ml-[5px] -top-[46px] cursor-pointer w-10 h-10 bg-black rounded-full flex justify-center items-center"
+          class="absolute ml-[5px] -top-[82px] cursor-pointer w-[72px] h-[72px] bg-black rounded-full flex justify-center items-center"
           (click)="menuToggle()"
         >
-          <ion-icon class="text-3xl fill-white" name="close"> </ion-icon>
+          <ion-icon class="text-5xl fill-white" name="close"> </ion-icon>
         </div>
       </div>
     </div>
@@ -32,12 +32,12 @@
     <!-- Your Content -->
     <div class="px-3 pb-5">
       <img
-        class="w-28 h-28 mx-auto my-1"
+        class="w-32 h-32 sm:w-48 sm:h-48 lg:w-32 lg:h-32 mx-auto my-1"
         src="../../../assets/animations/Success.gif"
         alt=""
       />
       <h5
-        class="text-[18px] sm:text-[28px] text-center text-[#007382] font-bold mt-4 mb-3"
+        class="text-[18px] sm:text-[28px] lg:text-[22px] text-center text-[#007382] font-bold mt-4 mb-3"
       >
         The Asset registered successfully
       </h5>
@@ -52,7 +52,7 @@
           </div>
           <div>
             <h6 class="text-[10px] sm:text-[16px] font-bold text-[#007382]">
-              Sim
+              SIM
             </h6>
             <p class="text-[10px] sm:text-[16px]">100 asset regd.</p>
           </div>

@@ -11,11 +11,11 @@
       </div>
 
       <!-- Content Body -->
-      <app-bottom-modal [isMenuOpen]="isMenuOpen"></app-bottom-modal>
-      <div class="overflow-auto p-4">
+      <div class="overflow-auto">
+        <app-bottom-modal [isMenuOpen]="isMenuOpen"></app-bottom-modal>
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
-          <div class="flex pt-4 mb-5 items-center">
+          <div class="flex pt-4 mx-4 mb-5 items-center">
             <div class="">
               <div class="bubble bg-[#007382] text-white">
                 <ion-icon
@@ -60,7 +60,7 @@
 
           <!-- bottom modal -->
           <button
-            class="bg-red-400 px-2 rounded-full my-2"
+            class="bg-red-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
             (click)="handleMenuToggle()"
           >
             Bottom Modal
