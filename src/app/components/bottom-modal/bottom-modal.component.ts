@@ -11,7 +11,6 @@ import { Input, Output, EventEmitter } from '@angular/core';
 })
 export class BottomModalComponent implements OnInit {
   @Input() isMenuOpen: boolean = false;
-  @Output() isMenuToggleOpen = new EventEmitter<boolean>(false);
 
   constructor() {}
 
@@ -19,6 +18,5 @@ export class BottomModalComponent implements OnInit {
 
   menuToggle() {
     this.isMenuOpen = !this.isMenuOpen;
-    this.isMenuToggleOpen.emit(this.isMenuOpen);
   }
 }

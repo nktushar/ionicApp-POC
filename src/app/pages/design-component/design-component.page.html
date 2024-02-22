@@ -12,6 +12,7 @@
 
       <!-- Content Body -->
       <div class="overflow-auto">
+        <!-- Assessment Success Modal -->
         <app-bottom-modal [isMenuOpen]="isMenuOpen"></app-bottom-modal>
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
@@ -61,7 +62,7 @@
           <!-- bottom modal -->
           <button
             class="bg-red-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
-            (click)="handleMenuToggle()"
+            (click)="assessmentModalToggle()"
           >
             Bottom Modal
           </button>
