@@ -1,4 +1,11 @@
 <ion-content>
+  @if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true){
+  <div
+    class="overlay"
+    (click)="isMenuOpen ? assessmentModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : null"
+  ></div>
+  }
+
   <div class="h-screen w-full flex overflow-hidden bg-gray-200">
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Navbar -->
