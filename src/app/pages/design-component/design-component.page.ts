@@ -7,6 +7,7 @@ import { ActionCardComponent } from 'src/app/components/action-card/action-card.
 import { AssessmentCardComponent } from 'src/app/components/assessment-card/assessment-card.component';
 import { BottomModalComponent } from 'src/app/components/bottom-modal/bottom-modal.component';
 import { ActionMgmtSuccessModalComponent } from 'src/app/components/action-mgmt-success-modal/action-mgmt-success-modal.component';
+import { AssessmentModalComponent } from 'src/app/components/assessment-modal/assessment-modal.component';
 
 @Component({
   selector: 'app-design-component',
@@ -22,17 +23,22 @@ import { ActionMgmtSuccessModalComponent } from 'src/app/components/action-mgmt-
     AssessmentCardComponent,
     BottomModalComponent,
     ActionMgmtSuccessModalComponent,
+    AssessmentModalComponent,
   ],
 })
 export class DesignComponentPage implements OnInit {
   isMenuOpen: boolean = false;
   isActionMgmtSuccessModalOpen: boolean = false;
+  isAssessmentModalOpen: boolean = false;
   constructor() {}
   ngOnInit() {}
-  assessmentModalToggle = () => {
+  assetCreationModalToggle = () => {
     this.isMenuOpen = !this.isMenuOpen;
   };
   actionMgmtModalToggle = () => {
     this.isActionMgmtSuccessModalOpen = !this.isActionMgmtSuccessModalOpen;
+  };
+  assessmentModalToggle = () => {
+    this.isAssessmentModalOpen = !this.isAssessmentModalOpen;
   };
 }

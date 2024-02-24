@@ -2,7 +2,7 @@
   @if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true){
   <div
     class="overlay"
-    (click)="isMenuOpen ? assessmentModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : null"
+    (click)="isMenuOpen ? assetCreationModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : isAssessmentModalOpen ? assessmentModalToggle() : null"
   ></div>
   }
 
@@ -24,6 +24,9 @@
         <app-action-mgmt-success-modal
           [(isMenuOpen)]="isActionMgmtSuccessModalOpen"
         ></app-action-mgmt-success-modal>
+        <app-assessment-modal
+          [(isMenuOpen)]="isAssessmentModalOpen"
+        ></app-assessment-modal>
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
           <div class="flex pt-4 mx-4 mb-5 items-center">
@@ -72,15 +75,21 @@
           <!-- bottom modal -->
           <button
             class="bg-red-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
-            (click)="assessmentModalToggle()"
+            (click)="assetCreationModalToggle()"
           >
-            Assessment Success Modal
+            Asset Creation Success Modal
           </button>
           <button
             class="bg-green-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
             (click)="actionMgmtModalToggle()"
           >
             Action Mgmt Success Modal
+          </button>
+          <button
+            class="bg-blue-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
+            (click)="actionMgmtModalToggle()"
+          >
+            Assessment Modal
           </button>
 
           <!-- Assessment Card -->

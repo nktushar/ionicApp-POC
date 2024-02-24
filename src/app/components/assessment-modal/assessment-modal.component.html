@@ -1,0 +1,56 @@
+<div
+  class="fixed w-full bottom-0 h-2/4 rounded-[32px] shadow-lg bg-transparent transform transition-transform duration-800 z-50"
+  [class]="!isMenuOpen ? 'translate-y-[calc(100%+40px)]' : ''"
+>
+  <div class="h-full w-full flex">
+    <div class="h-full w-[calc(100%-125px)] bg-white rounded-tl-[32px]"></div>
+    <div class="">
+      <svg
+        height="42"
+        viewBox="0 0 100 50"
+        width="82"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z"
+          fill="white"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <div class="w-auto h-full bg-white relative">
+        <div
+          class="absolute ml-[5px] -top-[82px] cursor-pointer w-[72px] h-[72px] bg-black rounded-full flex justify-center items-center"
+          (click)="menuToggle()"
+        >
+          <ion-icon class="text-5xl fill-white" name="close"> </ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="h-full bg-white flex-grow rounded-tr-[32px]"></div>
+  </div>
+  <div class="absolute top-8 w-full h-full bg-transparent overflow-y-scroll">
+    <!-- Your Content -->
+    <div class="px-3 pb-5">
+      <img
+        class="w-32 h-32 sm:w-48 sm:h-48 lg:w-32 lg:h-32 mx-auto my-1"
+        src="../../../assets/animations/thumbsup.gif"
+        alt=""
+      />
+      <h5
+        class="text-[28px] sm:text-[36px] lg:text-[30px] text-center text-[#007382] font-extrabold mt-2 sm:mt-4 mb-2"
+      >
+        Good Job!
+      </h5>
+      <p
+        class="text-[18px] sm:text-[28px] lg:text-[22px] text-center text-[#007382]"
+      >
+        The action is closed successfully
+      </p>
+      <div
+        class="w-[200px] sm:w-[304px] lg:w-[230px] h-[50px] sm:h-[76px] lg:h-[55px] mx-auto mt-3 sm:mt-5 lg:mt-3 text-[20px] sm:text-[24px] lg:text-[20px] text-[#007382] font-semibold bg-white border-2 border-[#007382] rounded-full flex items-center justify-center cursor-pointer"
+      >
+        Close
+      </div>
+    </div>
+  </div>
+</div>
