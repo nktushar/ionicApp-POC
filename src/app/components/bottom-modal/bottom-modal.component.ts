@@ -1,6 +1,5 @@
 import { IonicModule } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-bottom-modal',
@@ -11,6 +10,8 @@ import { Input } from '@angular/core';
 })
 export class BottomModalComponent implements OnInit {
   @Input() isMenuOpen: boolean = false;
+  @Output() isMenuOpenChange: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -18,5 +19,6 @@ export class BottomModalComponent implements OnInit {
 
   menuToggle() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpenChange.emit(this.isMenuOpen);
   }
 }
