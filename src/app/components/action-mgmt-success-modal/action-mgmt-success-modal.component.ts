@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,6 +10,8 @@ import { IonicModule } from '@ionic/angular';
 })
 export class ActionMgmtSuccessModalComponent implements OnInit {
   @Input() isMenuOpen: boolean = false;
+  @Output() isMenuOpenChange: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -17,5 +19,6 @@ export class ActionMgmtSuccessModalComponent implements OnInit {
 
   menuToggle() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpenChange.emit(this.isMenuOpen);
   }
 }
