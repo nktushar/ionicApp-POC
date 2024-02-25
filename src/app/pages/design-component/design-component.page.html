@@ -1,5 +1,6 @@
 <ion-content>
-  @if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true){
+  @if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true ||
+  isAssessmentModalOpen == true){
   <div
     class="overlay"
     (click)="isMenuOpen ? assetCreationModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : isAssessmentModalOpen ? assessmentModalToggle() : null"
@@ -87,7 +88,7 @@
           </button>
           <button
             class="bg-blue-400 px-5 py-2 rounded-full my-2 text-xl font-semibold text-gray-800"
-            (click)="actionMgmtModalToggle()"
+            (click)="assessmentModalToggle()"
           >
             Assessment Modal
           </button>
