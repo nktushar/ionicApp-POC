@@ -30,3 +30,8 @@
   ); /* Adjust the alpha value for darkness */
   z-index: 40; /* Ensure the overlay is on top of other elements */
 }
+
+ion-backdrop {
+  background: var(--ion-color-dark);
+  opacity: 0.6;
+}

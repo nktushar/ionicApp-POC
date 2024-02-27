@@ -1,12 +1,12 @@
+@if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true ||
+isAssessmentModalOpen == true){
+<!-- <div
+  class="overlay"
+  (click)="isMenuOpen ? assetCreationModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : isAssessmentModalOpen ? assessmentModalToggle() : null"
+></div> -->
+<ion-backdrop [visible]="true"> </ion-backdrop>
+}
 <ion-content>
-  @if (isMenuOpen == true || isActionMgmtSuccessModalOpen == true ||
-  isAssessmentModalOpen == true){
-  <div
-    class="overlay"
-    (click)="isMenuOpen ? assetCreationModalToggle() : isActionMgmtSuccessModalOpen ? actionMgmtModalToggle() : isAssessmentModalOpen ? assessmentModalToggle() : null"
-  ></div>
-  }
-
   <div class="h-screen w-full flex overflow-hidden bg-gray-200">
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Navbar -->
@@ -20,14 +20,6 @@
 
       <!-- Content Body -->
       <div class="overflow-auto">
-        <!-- Assessment Success Modal -->
-        <app-bottom-modal [(isMenuOpen)]="isMenuOpen"></app-bottom-modal>
-        <app-action-mgmt-success-modal
-          [(isMenuOpen)]="isActionMgmtSuccessModalOpen"
-        ></app-action-mgmt-success-modal>
-        <app-assessment-modal
-          [(isMenuOpen)]="isAssessmentModalOpen"
-        ></app-assessment-modal>
         <div class="max-w-6xl h-auto mx-auto">
           <!-- Progress Bar -->
           <div class="flex pt-4 mx-4 mb-5 items-center">
@@ -106,3 +98,12 @@
     </div>
   </div>
 </ion-content>
+
+<!-- Modals -->
+<app-bottom-modal [(isMenuOpen)]="isMenuOpen"></app-bottom-modal>
+<app-action-mgmt-success-modal
+  [(isMenuOpen)]="isActionMgmtSuccessModalOpen"
+></app-action-mgmt-success-modal>
+<app-assessment-modal
+  [(isMenuOpen)]="isAssessmentModalOpen"
+></app-assessment-modal>

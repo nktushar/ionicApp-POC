@@ -32,6 +32,7 @@ export class DesignComponentPage implements OnInit {
   isAssessmentModalOpen: boolean = false;
   constructor() {}
   ngOnInit() {}
+
   assetCreationModalToggle = () => {
     this.isMenuOpen = !this.isMenuOpen;
   };
